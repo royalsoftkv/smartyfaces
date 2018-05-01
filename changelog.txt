@@ -1,0 +1,436 @@
+SmartyFaces changelog
+
+version 0.1
+- Initial commit
+- configured environment, added libraries for Smarty, Php ActiveRecord, jQuery, jQueryPHP, Simple Html Dom
+- created sample page with sample view
+- implemented rerender of current view
+
+revision 370
+
+- Added process phases to ajax reaquest
+- Implemented Validator and Messages class
+- Added tags for inputtext, command button and messages
+
+revision 448
+
+- Added helper and jquery tree view for explorion server session states
+- Added checking and recreating of subview files if main template was changed
+- Saving session components
+- handling and optimization of session states - reusing existing and deleting non active ones
+- Added rerender parameter on commandlink tag
+- Added type attribute on inputtext tag
+- Added tinymce editor and created sf_editor tag
+- fixed tags for creating views
+- added tag sf_region to enable partial rerendering
+- added display modifier
+- added loging to processing phases of request
+
+revision 722
+
+- Added more configurable options
+- Merged resources and ajax file in one request
+
+revisiion 725
+
+- Added new blok sf_lng used to display content in different languages
+- Changed config option to resource_exclude to be string beside array
+
+26.02.2013 revision 883
+
+- Added CSS jQuery UI smooyhness theme
+- Added image for jQuery calendar
+- Created logger class for logging smarty faces execution
+- Added new SmartyFaces configurable variables: lng_session_var,view_dir,ajax_url_param,resource_url_param
+- Changed view resolving so now name of view is path to file including folder
+- Added passing of submitted data when processing link action
+- Implemented converters for components
+- Added definition for parameters inside component function call. This is used for documentation building
+- Changed to store all SmartyFaces data in session variable SF_SESSION
+- Created enumerations for messages types
+- Changed message for required validator to be in english
+- Added style attribute for messages
+- Added id attribute for output text
+- Added onchangeEvent attribute for selectonemenu
+- Created demo pages, view and code
+
+12.03.2013 revision 916
+
+- Fixed problem with validating disabled fields on some components
+- Added rowSelection attribute to sf_datatable to allow marking of specific row
+- Fixed problem with sf_view in template file
+- Added rendering of disabled checkbox component
+- Added converter attribute to sf_inputtext and sf_outputtext component
+
+09.04.2013 revision 935
+
+- Work on demo pages
+- Changed way how form vars in stateless view are processed (state is saved as json string in one hidden field)
+- Added checking if default required validator message is defined
+- SmartyFaces log window moved to bottom
+- Reorganization of ajax script
+
+13.04.2013
+
+- Work on demo pages, created tabs with display of attributes, html and PHP source
+- Added smarty code highlighting in demo pages with CodeMirror
+- Added PHP code highlighting in demo pages with SyntaxHighlighter
+- Reverted jQuery UI to 1.8.23 to be compatible with jQuery
+- Changed method for parsin language file
+- Implemented new way of reading component attributes (alltogether with use in demo pages)
+- Added new component: inplace
+- Added new component: status
+- Added attributes class and title to column headers of datatable
+- Added attributes title and disabled to commandbutton
+- Added attributes size and action for datepicker
+- Added title attribute to inputtext and inputtextarea
+- Added rendered and title attribute for selectonemenu
+
+14.04.2013
+
+- Fixed direct link action
+- Added checking if is set component parameter which is not defined
+- Added function to resolve passed parameters for component
+- Changed form, input textarea, link and outputtext component to process attributes with new function
+- Work on demo pages for for, inputtextarea, link and outputtext component
+
+16.04.2013
+
+- removed default clas atribute to be sf-input sf-inputtext
+- changed sf_column component and created demo page
+- changed sf_datatable component and created demo page
+- changed display of demo pages
+
+17.04.2013
+
+- Implemented functionality to store session components
+- Added starting session in SmartyFaces filter before reading session
+- changed sf_in tag and created demo page
+
+18.04.2013
+
+- Added method to smartyfaces to retrieve current language
+- Created demo pages for sf_facet and sf_lng tags
+- Added rendered attribute for sf_link tag
+
+19.04.2013
+
+- Added title attribute to sf_column tag
+- Changed sf_mail tag and created demo page
+- Changed sf_panelgroup tag and created demo page
+- Added title attribute to sf_checkbox tag
+- Changed sf_selectonemenu so no need to define val and label attribute if they are same as in items
+
+22.04.2013
+
+- Created demo page for sf_popup tag
+
+23.04.2013
+
+- Created demo page for sf_repeat tag
+
+24.04.2013
+
+- Created demo pages for sf_view and sf_tooltip
+
+25.04.2013
+
+- Added checking if validator attribute for component is specified with length greater than zero
+- Changed updating of $params variable with processed attributes in smarty plugins
+- Added immediate attribute as defined one
+- Created demo pages for chekbox, commandbutton, commandlink and editor
+
+28.04.2013
+
+- Created sample SQLite database
+- Added property $action_component to SmartyFacesComponent to hold current component which invoked action
+- Changed stylesheet for paginator
+- Implemented DataModel functionality, created class SmartyFacesDataModel
+- Added id and sortby attribute for sf_column for use of SmartyFacesDataModel
+- Added datamodel attribute for sf_datatable
+- Added checking for nested in for sf_checkbox
+- Created paginator component for datamodel
+- Created demo pages for datamodel
+
+12.05.2013
+
+- Small code fixes
+- Created demo page for sf_var tag
+- Created demo page for sf_fileupload component
+- Changed data model in order to handle selection of items in list
+- Implemented option for view client state saving
+- Added option to smarty to use subdirs for compiled templates
+
+15.05.2013
+
+- Updated jQuery UI to 1.10.3 version
+- Added redmond jQuery UI theme and set as framework default theme
+- Removed unused simple html dom class
+- Updated PHP ActiveRecord to latest beta version
+- Updated Smarty to version 3.1.13
+- Update jQuery to 1.9.1
+- Fixed commandlink tag when is disabled
+- Update TinyMCE version
+- Updated view demo page with storestate demo function
+- Removed ezpz tooltip functionality - replaced with jQuery UI
+- Created demo pages for sf_media and sf_spacer component
+
+05.06.2013 version 0.1-RC
+
+- Replaced old popup functionlaity with jQuery dialog
+- Changes in datepicker, added default image to be base 64
+- Created demo page for sf_image tag
+- Added immediate attribute to file upload
+- Fixed javascript error for Opera
+- Added width and align attributes to sf_column
+- Added attributes modal and width to sf_popup
+- Created demo page for listbox and fixed handling
+- Changed SmartyFacesLogger display
+- Fixed width attribute in popup
+- Fixed error in data model view, and added sorces to demo page
+- Created demo page for sf_messages tag
+- Changed SmartyFacesDataModel to not depened on database implementation
+- Created demo page for sf_paginator
+- Added onclick predefined attribute for components
+- Added title and onclick attribute for sf_datepicker
+- Added demo options for onclick and title attribute for sf_datepicker component
+- Implemented ajax event processing functionality
+- New sf_ajax tag for ajax event processing, and demo page for it
+- Added ajax event functionality to inputtext component
+- Changed inputtext demo page to show ajax event functionality
+- Added registering of events for processing, combined javascript events and ajax events
+- Changed and update sf_poll component to new ajax event model
+- Created demo page for sf_poll component
+- Fixed width attribute of sf_popup and changed description
+- Implemented registered events for sf_inputtext
+- Created demo page for sf_radio
+- Fixed radio group component and created demo page
+- Added posibility to have attributtes for sf_facet component
+- Added reset filter in data model
+- Changed that paginator will not be displayed it table is empty
+- Added update attribute to command button
+- Created demo page for sf_region component
+- Updated datamodel with region update functionality - not works correctly yet
+- Corected bug in sf_image component
+- Added demo page for sf_selectonemenu
+- Fixed small issues
+- Registered onkeyup event
+- Added filter to list of components in menu
+- Set demo page as default page
+
+10.07.2013 version 0.2-RC
+
+- Added confirm attribute for sf_radio
+- Added immediate attribute for sf_selectonememenu
+- Added new configurable avariables
+- Simplified setup and lines for starting Smartyfaces
+- Added reseting context variables before creating view
+- Created musltiview demo page
+- Fixed striping .tpl from template name when determinating view to render
+- Added class, title and confirm attribute to sf_link
+- Added class attribute for messages
+
+04.08.2013
+
+- Small bugfixing
+- Returned back configuration for smarty to not use subdirs
+- Added parameters property to SmartyfacesDataModel and implemented customizable strings for paginator template
+- Fixed close event on popup
+- Added rendered attribute to checkbox
+- Changed demo page for sf_checkbox
+- Fixed bug with file upload component and required fields
+- Implemented checkbox component as boolean true/false - added booleean attribute
+- Added action attribute to sf_inplace component
+
+- Changed processing of states.
+- Added config variable to lomit number of states
+- Displaying warning if state is expired
+- Added new component tabs, created demo pages
+- Changes in demo pages
+- Added attribute load to sf_tabs
+- Added attribute onclick to sf_tab
+- Fixed bug with checkbox and tabs
+- Committed other changes
+- Added chck if file exists before fetching subview. If file not exists view is reloaded.
+- Added custom attribute definition which will allow passing arbitrary string directly to rendered html of component
+- Added rowclass attribute to sf_datatable tag which can be used to calculate class of entire row in table
+- Improved rendering of tabs, fixed some errors
+- Added class attribute to sf_view tag
+- Added custom attribute to command button
+- Added onchange and style attributes to sf_datepicker
+- Fixed handling of default attribute for sf_var tag
+
+- Fixed situation in ini file where equal sign is in text
+- Added configuration 'load_css' which enables/disables stylling
+- Created minimized version of smartyfaces.css
+- Redesigned rendering of data table
+- Added header facet to popup
+- Added style attribute to selectonemenu
+
+- Created class for ligher data model in order to reduce memory usage on server
+- Bugfixing
+- Added action parameters to link component
+- Added responsive attribute to datatable (will be user with bootstrap skin)
+- Added fileClass attribute for upload component
+- Added atrributes styled and customClasses for sf_messages
+- Update showcase pages
+
+15.04.2014 - 0.2.4
+
+- Implemented progressive loading of java scripts
+- Added configuration parameter for progressive loading
+- Added new parameter 'remove_unused_params' to reduce size of component tree by removing unusable parameters form components
+
+07.05.2014
+
+- Added config setting to compress state on server
+- Fixed bug with datepicker in popup
+- Fixed bug with table rowclass
+
+11.05.2014
+
+- Added reordable list class for use with reordable column
+- Fixed problem with view with multiple popups
+- Implemented reordable column
+- Added class attribute to facet
+- Fixed empty action string for tabs
+- Added block attribute for selectone menu
+
+23.05.2014
+
+- Update versions of jQuery, jQuery UI, Smarty
+- Added security check for rendering images
+- Removed unused javascripts
+
+24.05.2014
+
+- Fixed reordable list if id is not numeric
+- Created reordable list demo page
+- Added class sttribute to popup
+- Added value binding to tabs component
+
+10.06.2015 - 0.2.7
+
+- Added translation support to ajax calls
+- Fixed undefined index errors
+- Upgraded jquery
+- Added oncomplete callback on ajax calls
+- Added attribute to render command button as "button"
+- Added custom attribute to command link and input text
+- Added style attribute to inputtextarea
+- Updated demos
+
+- Fixed checking nested folders
+- Added config to inline translation editing
+- Fixed problem with included template files
+- Changed storing compiled templates as folder/files
+- Added class to outer div of select box
+- Updated demos
+
+20.06.2015 - 0.2.8
+
+- Fixed jquery php to execute scripts in order they defined
+- Added processing of external resources
+- Added bootstrap as resource
+- Added bootstrap-datetimepicker as resource
+- Added font-awesome as resource
+- Added moment.js as resource
+- Added summernote editor as resource
+- Fixed bug with non modal popup
+- Replaced jQuery datepicker with bootsrap
+- Replaced tinymce editor with summernote
+- Updated demos
+
+21.06.2015 - 0.2.9
+- Deleted old jQuery-PHP Code and integrated in SmartyFaces
+
+23.07.2015 - 0.2.10
+- path fixing
+- added global variable SMARTYFACES_PARAM_ which will be applied for whole view (example for attachMessage attribute)
+- paginator code fixes
+- added functions for global message types
+- style for translatable support
+- added class sf-caption ot table header
+- added checking of nested command button
+- added new attributes: rendered, bootstrapIcon and datepickerOptions to datepicker
+- added style attribute to image
+- added immediate attribute to paginator
+- updated demo pages
+
+04.09.2015 - 0.2.11
+- replaced some hardcoded strings with translations
+- added checking function if request is resource or image
+- implemented sortign by multiple columns in data model
+- disabled simulataneous ajax requests
+- added sending mail to cc recipient
+- added confirm attribute to checkbox
+- added additional configurable attributes for summernote editor
+- added custom attribute to textarea
+- implemented function to send flash messages between pages
+- added style attribute to outputtext
+- fixed problem with onchange on select
+- updated demo pages
+
+29.11.2015 - 0.2.20
+- added recursive option to function which lists file in folder
+- added abstract class for SmartyFacesObjectDataModel, data model based on PHPActiveRecord model
+- fixed generating id of component if component is inside {function}
+- changed column widths for paginator in default template
+- added autocomplete option to select box
+- added attribute optionClass to select box to evaluate class of each option
+- bugfixing
+- added rendered attribute to image component
+- added attributes style and disabled to listbox component
+- updated demo pages
+
+06.12.2025 - 0.2.21
+- added support for ck editor
+- javascript bugfixing
+
+29.04.2016 - 0.2.30
+- added configuration option "mail_enabled" to enable/disable mail sending
+- creation of recursive folders for subviews
+- added css class sf-ajax to body during ajax execution
+- added timestamp attribute to image to prevent image caching
+- updated demos
+
+12.09.2016	- 0.2.31
+- code cleanup
+- Added config path for resources folder (auto means use integrated folder)
+- Supresses some warnings
+- Fixed scrolling to first element with error
+- Added custom request support using RequestProcessor
+- Added new attribute to sf_selectonemenu to allow free input
+- Returned view of standard error ajax response
+- Added class to sortable columns in datatable
+- FIxed javascript timeout varibles for poll
+
+20.11.2016  - 0.3
+
+- added new config variable: eval_with_file - where eval function will be replaced wwith temporary file
+- added ajax key to protect ajax responses
+- added support for triggers
+- added optional parametar to throw error on resolve path function
+- added exit from custom request if return false
+- fixed style for fileupload component
+- added converter attribute to textarea
+- fixed width of autocomplete
+- added option to set default button on form
+
+18.01.2017  - 0.3.1
+- changed default button on form to allow scopes for submit
+- updated demo page for default button
+
+18.04.2018  - 0.4
+- added callback functions functionality to extend SmartyFaces core
+- fixed warning when there is datatable value null
+- added Return-Path header to mail component
+- added additional css class for disabled editor
+- added javascript callback functions on ajax success or error
+- added handlings of various language callbacks
+- fixed reloading when view is expired
+- added custom default sorting for data model if column is not specified
+- fixed bug with data table where footer is not rendered on empty table
+- new filter functions to data model
+- added posibility to specify view with single delimieter tags {sf_view} which will work if only one view is on page
+- updated demo pages with changes

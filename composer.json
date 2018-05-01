@@ -1,0 +1,28 @@
+{
+  "name": "royalsoft/smartyfaces-framework",
+  "description": "PHP Ajax Framework based on Smarty",
+  "authors": [
+    {
+      "name": "RoyalSoft",
+      "email": "royalsoftkv@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/royalsoftkv/php-activerecord.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/royalsoftkv/smartyfaces-core.git"
+    }
+  ],
+  "require": {
+    "royalsoftkv/php-activerecord": "dev-smartyfaces",
+    "smarty/smarty": "v3.1.18",
+    "royalsoftkv/smartyfaces-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["vendor/royalsoftkv/smartyfaces-core","src"]
+  }
+}
