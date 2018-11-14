@@ -2,7 +2,7 @@
 
 {block name="body"}
 
-{{sf_view id="s1"}} 
+{{sf_view id="s1"}}
 	Smarty view in body
 	{sf_in name=counterView}
 	Counter={$counterView->counter} Start={$counterView->start}
