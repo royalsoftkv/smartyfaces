@@ -25,7 +25,9 @@ gulp.task('copy-resources', function () {
     gulp.src('bower_components/jquery-php/javascript/jquery.php.js').pipe(gulp.dest('public/lib/jquery-php'));
     gulp.src('bower_components/jquery-php/library/jQuery.php').pipe(gulp.dest('./'));
     gulp.src('bower_components/jquery/dist/jquery.min.js').pipe(gulp.dest('public/lib/jquery'));
-    gulp.src('bower_components/jquery-ui/ui/minified/jquery-ui.custom.min.js').pipe(rename('jquery-ui-1.10.4.custom.min.js')).pipe(gulp.dest('resources/js'));
+    gulp.src('bower_components/jquery-ui/ui/minified/jquery-ui.custom.min.js').pipe(rename('jquery-ui-custom.min.js')).pipe(gulp.dest('public/lib/jquery-ui'));
+    gulp.src('bower_components/jquery-ui/themes/smoothness/jquery.ui.theme.css').pipe(gulp.dest('public/lib/jquery-ui'));
+    gulp.src('bower_components/jquery-ui/themes/smoothness/images/*').pipe(gulp.dest('public/lib/jquery-ui/images'));
     gulp.src('bower_components/moment/min/moment.min.js').pipe(gulp.dest('public/lib/moment'));
     gulp.src('bower_components/summernote/dist/*').pipe(gulp.dest('public/lib/summernote'));
     gulp.src('vendor/royalsoftkv/smartyfaces-core/assets/**/*').pipe(gulp.dest('public/lib/smartyfaces'));

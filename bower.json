@@ -22,7 +22,7 @@
     "jquery-ui": "1.10.4",
     "moment": "2.10.3",
     "summernote": "0.6.7",
-    "codemirror": "3.13.0",
+    "codemirror": "5.37.0",
     "SyntaxHighlighter": "3.0.83"
   }
 }

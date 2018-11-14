@@ -8,7 +8,7 @@ class AjaxView {
 	public $out2;
 	public $rendered=true;
 	public $onchange;
-	public $immediate;
+	public $immediate=true;
 	
 	function change() {
 		$actionData=SmartyFacesContext::$actionData;

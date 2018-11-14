@@ -38,7 +38,7 @@
 		
 		<hr/>
 		
-		{sf_tabs}
+		{sf_tabs id="tabs"}
 			{sf_tab header="Attributes"}
 				{include file="demo/components/attributes_table.tpl"}
 			{/sf_tab}
@@ -51,7 +51,7 @@
 				<pre class="brush: php">{DemoFunctions::getClassSource($tag)}</pre>
 			{/sf_tab}
 		{/sf_tabs}
-		
+
 		{$smarty.capture.text3|default:''}
 		
 	{/if}
@@ -59,14 +59,5 @@
 {/block}
 
 {block name=js_bottom}
-	<script type="text/javascript">
-	    SyntaxHighlighter.all();
-	    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-	        lineNumbers: true,
-	        mode: "smarty",
-	        readOnly : true,
-	        viewportMargin: Infinity
-	    });
-		$("#tabs").tab();
-	</script>
+
 {/block}

@@ -52,6 +52,7 @@ class CheckboxView {
 	
 	function submit2() {
 		ob_start();
+		ini_set("xdebug.overload_var_dump", "off");
 		var_dump($this->value2);
 		$s=ob_get_clean();
 		$str = "You submitted ".$s;

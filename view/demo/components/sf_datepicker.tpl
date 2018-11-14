@@ -13,7 +13,10 @@
 			<div class="row">
 				<div class="col-sm-8">
 						Select Date
-						{sf_datepicker value="#[\$demoView->date]" required=true attachMessage=$demoView->attachMessage 
+						{sf_datepicker
+							value="#[\$demoView->date]"
+							required=true
+							attachMessage=$demoView->attachMessage
 							size=50
 							dateFormat=$demoView->dateFormat class="my-datepicker"
 							converter="{if $demoView->useConverter eq 1}MySqlDateConverter{/if}"
@@ -33,7 +36,7 @@
 						<br/>
 						{$demoView->text}
 						<hr/>
-						{sf_datepicker value="#[\$demoView->date]" dateFormat="DD.MM.YYYY hh:mm:ss"}
+						{sf_datepicker value="#[\$demoView->date2]" dateFormat="DD.MM.YYYY hh:mm:ss"}
 					</div>
 					<div class="col-sm-4">
 						<div class="well">

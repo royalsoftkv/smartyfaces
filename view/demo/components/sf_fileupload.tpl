@@ -34,7 +34,7 @@
 					<div class="well">
 						{sf_checkbox value='#[$bean->rendered]' immediate=true action="" label="Rendered"}
 						Accepted types
-						{sf_inputtext value='#[$bean->acceptTypes]' style="display:inline"}
+						{sf_inputtext value='#[$bean->acceptTypes]' style="display:inline" disabled=true}
 						<br/>
 						Max size
 						{sf_inputtext value='#[$bean->maxSize]' style="display:inline"}

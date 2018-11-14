@@ -3,7 +3,7 @@
 class FileuploadView {
 	
 	public $rendered=true;
-	public $acceptTypes = "jpg pdf";
+	public $acceptTypes = "jpg pdf png";
 	public $maxSize=100000;
 	public $buttonClass;
 	public $immediate=true;

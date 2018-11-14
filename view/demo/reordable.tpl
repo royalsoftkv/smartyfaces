@@ -57,17 +57,3 @@
 
 {/block}
 
-{block name=js_bottom}
-<script type="text/javascript">
-	$(function() {
-		$( "#tabs" ).tabs();
-	});
-    SyntaxHighlighter.all();
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        lineNumbers: true,
-        mode: "smarty",
-        readOnly : true,
-        viewportMargin: Infinity
-    });
-</script>
-{/block}

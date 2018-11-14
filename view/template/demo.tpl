@@ -42,6 +42,21 @@
 		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/shBrushXml.js"></script>
 		<script src="lib/codemirror/codemirror.js"></script>
 		<script src="lib/codemirror/smarty.js"></script>
+		<script type="text/javascript">
+            $(function() {
+                $('#tabs-tabs').tabs();
+                SyntaxHighlighter.all();
+                var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                    lineNumbers: true,
+                    mode: "smarty",
+                    readOnly : true,
+                    viewportMargin: Infinity
+                });
+                $('#tabs-tabs').on('shown.bs.tab', function (e) {
+                    editor.refresh();
+                })
+            });
+		</script>
 		{block name=js_bottom}
 		
 		{/block}

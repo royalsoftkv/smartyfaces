@@ -53,15 +53,15 @@
 								<br/>
 								Var1 in region is not available!
 								<br/>
-								Var1a in region = {$var1a}
+								Var1a in region = {$var1a|default:null}
 								<br/>
-								Var1b in region = {$var1b}
+								Var1b in region = {$var1b|default:null}
 								<br/>
-								Var1c in region = {$var1c}
+								Var1c in region = {$var1c|default:null}
 								<br/>
-								Var1d in region = {$var1d}
+								Var1d in region = {$var1d|default:null}
 								<br/>
-								Var2 in region ={$var2}
+								Var2 in region ={$var2|default:null}
 							</div>
 						' rendered=$bean->rendered assign=var1d}
 						

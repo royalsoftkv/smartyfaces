@@ -45,6 +45,7 @@ class DatepickerView {
 	}
 	
 	public $date;
+	public $date2;
 	public function submitDate() {
 		$this->text="You submitted: ".$this->date;
 	}	

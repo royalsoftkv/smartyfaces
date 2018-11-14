@@ -27,7 +27,7 @@
 						title="Click here" disabled=$bean->data.disabled|default:false confirm="{if $bean->data.confirm|default:false}Are you sure to want to click?{/if}"
 						onclick="{if $bean->data.onclick|default:false}alert('onclick event'){/if}"
 						custom='data-role="button"' btnclass='primary' button=$bean->data.button|default:false}
-					{sf_commandbutton value="Button 2" action="#[\$bean->submit2()]" immediate=true default=$bean->data['default']}
+					{sf_commandbutton value="Button 2" action="#[\$bean->submit2()]" immediate=true default="{if $bean->data['default']}form{/if}"}
 				</div>
 				<div class="col-sm-4">
 					<div class="well">

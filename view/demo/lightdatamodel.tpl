@@ -73,40 +73,22 @@
 {$template="{Smartyfaces::$config['root_path']}/view/demo/lightdatamodel.tpl"}
 {eval $smarty.capture.view}
 
-<div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Source</a></li>
-		<li><a href="#tabs-2">PHP code - LightDataModelView</a></li>
-		<li><a href="#tabs-3">PHP code - LightCountryDataModel</a></li>
-	</ul>
-	<div id="tabs-1">
-		<textarea id="code">
-			{htmlspecialchars($smarty.capture.view)}
-		</textarea>
-	</div>
-	<div id="tabs-2">
-		<pre class="brush: php">{DemoFunctions::getClassNameSource('LightDataModelView')}</pre>
-	</div>
-	<div id="tabs-3">
-		<pre class="brush: php">{DemoFunctions::getClassNameSource('LightCountryDataModel')}</pre>
-	</div>
-</div>
+
+
+    {sf_tabs id="tabs"}
+        {sf_tab header="Source"}
+            <textarea id="code">
+                {htmlspecialchars($smarty.capture.view)}
+            </textarea>
+        {/sf_tab}
+        {sf_tab header="PHP code - LightDataModelView"}
+		    <pre class="brush: php">{DemoFunctions::getClassNameSource('LightDataModelView')}</pre>
+        {/sf_tab}
+        {sf_tab header="PHP code - LightCountryDataModel"}
+		    <pre class="brush: php">{DemoFunctions::getClassNameSource('LightCountryDataModel')}</pre>
+        {/sf_tab}
+    {/sf_tabs}
 
 
 
-{/block}
-
-{block name=js_bottom}
-<script type="text/javascript">
-	$(function() {
-		$( "#tabs" ).tabs();
-	});
-    SyntaxHighlighter.all();
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        lineNumbers: true,
-        mode: "smarty",
-        readOnly : true,
-        viewportMargin: Infinity
-    });
-</script>
 {/block}

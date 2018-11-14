@@ -27,15 +27,17 @@
 							title="Click here" disabled=$bean->data.disabled|default:false confirm="{if $bean->data.confirm|default:false}Are you sure to want to click?{/if}"
 							onclick="{if $bean->data.onclick|default:false}alert('onclick event'){/if}"
 							update="{if $bean->data.update|default:false}region{/if}" custom='link-id="123"'}
-							
-						{sf_region id="region" value='
-							{sf_in name=bean class=CommandlinkView}
-							{if isset($bean) and isset($bean->data.name)}
-								You submitted {$bean->data.name}
-							{/if}
-						
-						
-						' assign=bean}
+
+						{if $bean->data.update|default:false}
+							{sf_region id="region" value='
+								{sf_in name=bean class=CommandlinkView}
+								{if isset($bean) and isset($bean->data.name)}
+									You submitted {$bean->data.name}
+								{/if}
+
+
+							' assign=bean}
+						{/if}
 						
 					</div>
 					<div class="col-sm-4">
