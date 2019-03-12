@@ -8,13 +8,14 @@ class FileuploadView {
 	public $buttonClass;
 	public $immediate=true;
 	public $fileClass;
+	public $multipleUpload;
 	
-	public $file;
+	public $files;
 	public $name;
 	
 	function fileUploaded(){
-		$file=SmartyFaces::getUplaodFiles();
-		$this->file=$file;
+		$files=SmartyFaces::getUplaodFiles(false);
+		$this->files=$files;
 	}
 	
 	function set() {

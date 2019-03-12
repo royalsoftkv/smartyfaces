@@ -5,13 +5,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-gulp.task('default', function () {
-    gulp.start('copy-resources');
-    gulp.start('scripts');
-
-});
-
-gulp.task('copy-resources', function () {
+gulp.task('copy-resources', function (done) {
     gulp.src('bower_components/bootstrap/dist/**/*').pipe(gulp.dest('public/lib/bootstrap'));
     gulp.src('bower_components/bootstrap-combobox/css/*').pipe(gulp.dest('public/lib/bootstrap-combobox'));
     gulp.src('bower_components/bootstrap-combobox/js/*').pipe(gulp.dest('public/lib/bootstrap-combobox'));
@@ -31,7 +25,7 @@ gulp.task('copy-resources', function () {
     gulp.src('bower_components/moment/min/moment.min.js').pipe(gulp.dest('public/lib/moment'));
     gulp.src('bower_components/summernote/dist/*').pipe(gulp.dest('public/lib/summernote'));
     gulp.src('vendor/royalsoftkv/smartyfaces-core/assets/**/*').pipe(gulp.dest('public/lib/smartyfaces'));
-    gulp.src('vendor/royalsoftkv/smartyfaces-core/css/smartyfaces.css').pipe(gulp.dest('public/lib/smartyfaces'));
+    gulp.src('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css').pipe(gulp.dest('public/lib/smartyfaces'));
     gulp.src('vendor/royalsoftkv/smartyfaces-core/img/*').pipe(gulp.dest('public/lib/smartyfaces/img'));
     gulp.src('assets/summernote/summernote-copypaste.js').pipe(gulp.dest('public/lib/summernote'));
     gulp.src('bower_components/codemirror/lib/*').pipe(gulp.dest('public/lib/codemirror'));
@@ -41,6 +35,7 @@ gulp.task('copy-resources', function () {
     gulp.src('assets/img/*').pipe(gulp.dest('public/img'));
     gulp.src('bower_components/SyntaxHighlighter/styles/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/styles'));
     gulp.src('bower_components/SyntaxHighlighter/scripts/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/scripts'));
+    done();
 });
 
 gulp.task('exec', function () {
@@ -92,3 +87,7 @@ gulp.task('scripts', function () {
         .pipe(uglify())
         .pipe(gulp.dest('public/lib/jquery-ui'));
 });
+
+gulp.task('default', gulp.series('copy-resources', 'scripts', function(done) {
+    done();
+}));

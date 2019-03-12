@@ -19,14 +19,14 @@
 						{sf_fileupload action="#[\$bean->fileUploaded()]" id="upload" value="Upload" rendered=$bean->rendered
 							acceptTypes=$bean->acceptTypes resetCtrl=Back maxSize=$bean->maxSize 
 							buttonClass="{if $bean->buttonClass}upload-btn{/if}" immediate=$bean->immediate
-							fileClass="{if $bean->fileClass}file-btn{/if}"}
+							fileClass="{if $bean->fileClass}file-btn{/if}" multiple=$bean->multipleUpload}
 					</div>
 						
-					{sf_popup rendered=$bean->file header="Uploaded file" action="#[\$bean->file=null]" immediate=true}
+					{sf_popup rendered=$bean->files header="Uploaded files" action="#[\$bean->files=null]" immediate=true}
 						<pre>
-							{print_r($bean->file)}
+							{print_r($bean->files)}
 						</pre>
-						{sf_commandbutton value="Close" action="#[\$bean->file=null]" immediate=true}
+						{sf_commandbutton value="Close" action="#[\$bean->files=null]" immediate=true}
 					{/sf_popup}
 					
 				</div>
@@ -44,6 +44,7 @@
 						{sf_checkbox value='#[$bean->buttonClass]' immediate=true action="" label="Use button class"}
 						{sf_checkbox value='#[$bean->immediate]' immediate=true action="" label="Immediate"}
 						{sf_checkbox value='#[$bean->fileClass]' immediate=true action="" label="Use File button class"}
+						{sf_checkbox value='#[$bean->multipleUpload]' immediate=true action="" label="Multiple files upload"}
 					</div>
 				</div>
 			</div>

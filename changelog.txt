@@ -434,3 +434,12 @@ revisiion 725
 - new filter functions to data model
 - added posibility to specify view with single delimieter tags {sf_view} which will work if only one view is on page
 - updated demo pages with changes
+
+12.03.2019  - 0.4.1
+- cleanup: removed unused assets
+- CKEditor improvement - remember editor height
+- Allowed multiple upload
+- Changed tag for sf_image
+- Set to use subdirs for smarty compilation
+- Added option to override js resources by config: resources_overrride_js
+- Upgraded gulp
