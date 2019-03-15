@@ -443,3 +443,4 @@ revisiion 725
 - Set to use subdirs for smarty compilation
 - Added option to override js resources by config: resources_overrride_js
 - Upgraded gulp
+- Added function to globally assign multiple variables
