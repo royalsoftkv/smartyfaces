@@ -444,3 +444,14 @@ revisiion 725
 - Added option to override js resources by config: resources_overrride_js
 - Upgraded gulp
 - Added function to globally assign multiple variables
+
+09.11.2018  - 0.4.2
+- Fixed ajax-key header
+- Supress exception for initializing editor component
+- PHP 7 compatibility
+- Mail functon now returns value if not enabled
+- Added readonly attribute for input component
+- Fixed session handling when key not exists
+- Actions tracking
+
+
