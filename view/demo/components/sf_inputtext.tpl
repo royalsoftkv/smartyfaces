@@ -20,7 +20,8 @@
 					{sf_inputtext id="itext" value='#[$demoView->name]' required=($demoView->required eq 1) 
 						attachMessage=($demoView->attachMessage eq 1) size=$demoView->size type=$demoView->type 
 						disabled=($demoView->disabled eq 1)
-						placeholder=$demoView->placeholder block=$demoView->block custom='custom-attr="value"'}
+						placeholder=$demoView->placeholder block=$demoView->block custom='custom-attr="value"'
+						readonly=$demoView->readonly}
 					<br/>
 					{sf_commandbutton value="Submit" action='#[$demoView->submit()]'}
 					{sf_commandbutton value="Reset" action='#[$demoView->reset()]' immediate=true}
@@ -43,6 +44,7 @@
 						{sf_inputtext id="placeholder" value='#[$demoView->placeholder]' style="display:inline"}
 						<br/>
 						{sf_checkbox value='#[$demoView->block]' action="" immediate=true label="Block display"}
+						{sf_checkbox value='#[$demoView->readonly]' action="" immediate=true label="Read only"}
 					</div>
 				</div>
 			</div>

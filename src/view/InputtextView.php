@@ -11,6 +11,7 @@ class InputtextView {
 	public $attachMessage; 
 	public $placeholder='Enter text here...';
 	public $block=false;
+	public $readonly = false;
 	
 	function __construct(){
 		$this->resetAttributes();
