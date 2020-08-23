@@ -454,4 +454,12 @@ revisiion 725
 - Fixed session handling when key not exists
 - Actions tracking
 
-
+23.08.2020  - 0.4.3
+- Ignoring deprecated errors
+- Added space between checkbox and label
+- Removed hardcoded options from datepicker
+- Added trigger to process custom request
+- Added option to load language explicitly
+- Fixed check for ajax header
+- Started work on socket support
+- Addev Vue handler
