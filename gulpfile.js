@@ -35,6 +35,7 @@ gulp.task('copy-resources', function (done) {
     gulp.src('assets/img/*').pipe(gulp.dest('public/img'));
     gulp.src('bower_components/SyntaxHighlighter/styles/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/styles'));
     gulp.src('bower_components/SyntaxHighlighter/scripts/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/scripts'));
+    gulp.src('bower_components/socket.io-client/dist/socket.io.dev.js').pipe(gulp.dest('public/lib/socket.io'));
     done();
 });
 
