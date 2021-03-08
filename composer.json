@@ -19,7 +19,7 @@
   ],
   "require": {
     "royalsoftkv/php-activerecord": "dev-smartyfaces",
-    "smarty/smarty": "v3.1.18",
+    "smarty/smarty": "v3.1.39",
     "royalsoftkv/smartyfaces-core": "dev-master"
   },
   "autoload": {
