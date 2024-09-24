@@ -5,8 +5,10 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bower" : "./node_modules/.bin/bower install",
-    "gulp": "./node_modules/.bin/gulp"
+    "clean": "rm -rf bower_components",
+    "bower": "./node_modules/.bin/bower install",
+    "gulp": "./node_modules/.bin/gulp",
+    "setup-dev": "rm -rf vendor/royalsoftkv/smartyfaces-core && ln -sr ../smartyfaces-core vendor/royalsoftkv/smartyfaces-core"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }

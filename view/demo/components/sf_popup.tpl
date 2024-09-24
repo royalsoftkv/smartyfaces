@@ -20,9 +20,9 @@
 
 						{sf_commandlink value="Open popup" action='#[$bean->openPopup()]'}
 						<br/>
-						{sf_commandlink value="Open second popup" action='#[$bean->popup2=true]'}
+						{sf_commandlink value="Open second popup" action='#[$bean->popup2=true]' immediate=true}
 						<br/>
-						{sf_commandlink value="Open third popup" action='#[$bean->popup3=true]'}
+						{sf_commandlink value="Open third popup" action='#[$bean->popup3=true]' immediate=true}
 						
 						{sf_popup rendered=$bean->popup immediate=$bean->immediate action='#[$bean->closePopup()]' 
 							header="SmartyFaces Popup" modal=$bean->modal width=$bean->width fade=$bean->fade

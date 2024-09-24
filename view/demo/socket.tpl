@@ -10,7 +10,7 @@
             {sf_in name=bean class=SocketView}
             {sf_socket id=server type=server host="0.0.0.0" port=2050}
 
-            Socket test
+            Socket test (TODO)
 
             {sf_commandbutton value=Test action='#[$bean->test()]'}
 

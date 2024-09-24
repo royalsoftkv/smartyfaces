@@ -1,7 +1,7 @@
 <?php
 
 ini_set("display_errors",1);
-error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
+error_reporting(E_ALL);
 
 //ini_set("memory_limit","64M");
 
@@ -13,7 +13,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 SmartyFaces::configure(
 	array('root_path'=>dirname(ROOT),
-	'server_url'=>'/',
+	'server_url'=>'',
 	'force_compile'=>false,
 	'load_classes'=>false,
 	'default_view'=>'demo/home',
@@ -21,7 +21,6 @@ SmartyFaces::configure(
 	'skin'=>'bootstrap',
 	'mail_enabled'=>false,
 	'eval_with_file'=>false,
-		'mail_enabled'=>true,
 		'resources_url'=>'/lib'
 	)
 );
@@ -77,4 +76,4 @@ SmartyFaces::processRequest();
 
 
 
-?>
+

@@ -14,7 +14,7 @@ class DemoFunctions {
 	
 	static function getPluginsDir() {
 		$reflector = new ReflectionClass('SmartyFaces');
-		$folder=dirname($reflector->getFileName()).DIRECTORY_SEPARATOR."smarty_plugins";
+		$folder=dirname(dirname($reflector->getFileName())).DIRECTORY_SEPARATOR."smarty_plugins";
 		return $folder;		
 	}
 	

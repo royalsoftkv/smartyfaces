@@ -5,13 +5,18 @@ class LinkView {
 	public $disabled;
 	
 	static function action() {
-		if(!isset($_SESSION['LinkView']['counter'])) $_SESSION['LinkView']['counter']=0;
-		$_SESSION['LinkView']['counter']++;
+        $counter = SFSession::get('LinkViewCounter', 0);
+        $counter++;
+        SFSession::set('LinkViewCounter', $counter);
 		SmartyFaces::reload();
 	}
+
+    static function counter() {
+        return SFSession::get('LinkViewCounter', 0);
+    }
 	
 	static function clear() {
-		$_SESSION['LinkView']['counter']=0;
+        SFSession::delete('LinkViewCounter');
 		SmartyFaces::reload();
 	}
 	

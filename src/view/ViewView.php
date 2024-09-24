@@ -31,32 +31,20 @@ class ViewView {
 	}
 	
 	static function toggleLog() {
-		if(isset($_SESSION['log'])) {
-			$_SESSION['log']=!$_SESSION['log'];
-		} else{
-			$_SESSION['log']=true;
-		}
+        SFSession::toggle('log');
 		SmartyFaces::reload();
 	}
 	
 	static function log() {
-		if(isset($_SESSION['log'])) {
-			return $_SESSION['log'];
-		} else{
-			return false;
-		}
+         return SFSession::get('log', false);
 	}
 	
 	static function isCompressState() {
-		return isset($_SESSION['compress_state']);
+		return SFSession::get('compress_state', false);
 	}
 	
 	function toggleCompressState() {
-		if(isset($_SESSION['compress_state']) && $_SESSION['compress_state']) {
-			$_SESSION['compress_state']=false;
-		} else {
-			$_SESSION['compress_state']=true;
-		}
+        SFSession::toggle('compress_state');
 		SmartyFaces::clearSession();
 	}
 	

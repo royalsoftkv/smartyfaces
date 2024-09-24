@@ -20,7 +20,7 @@ class DatatableView {
 	}
 	
 	function getRowClass($row){
-		if($row['iso']=="DZ"){
+		if(@$row['iso']=="DZ"){
 			return "red";
 		} else {
 			return "";

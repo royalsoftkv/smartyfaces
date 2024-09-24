@@ -20,7 +20,7 @@
 						{sf_link value="link" disabled=$bean->disabled action="LinkView::action()"} 
 						which can execute some action and reload page.
 						<br/>
-						You reloaded this page with this link {$smarty.session.LinkView.counter|default:0} times.
+						You reloaded this page with this link {LinkView::counter()} times.
 						{sf_link value="Clear" action='LinkView::clear()' confirm="Are you sure to do this?"}
 						</p>
 						<p>

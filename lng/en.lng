@@ -14,3 +14,4 @@ go_to_next_page=Go to next page
 go_to_last_page=Go to last page
 rows_per_page=Rows per page
 all=All
+some_language_key=I am variable translation in English

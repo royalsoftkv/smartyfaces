@@ -1,5 +1,5 @@
 {{sf_view id="demo_menu"}}
-{sf_form}
+{sf_form id="demo_menu_form"}
 {sf_in name=menuBean class=DemoFunctions}
 {$components=$menuBean->components()}
 <script type="text/javascript">
