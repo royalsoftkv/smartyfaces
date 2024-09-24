@@ -1,53 +1,58 @@
-var gulp = require('gulp');
-var exec = require('child_process').exec;
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const exec = require('child_process').exec;
+const rename = require('gulp-rename');
 
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
-gulp.task('copy-resources', function (done) {
-    gulp.src('bower_components/bootstrap/dist/**/*').pipe(gulp.dest('public/lib/bootstrap'));
-    gulp.src('bower_components/bootstrap-combobox/css/*').pipe(gulp.dest('public/lib/bootstrap-combobox'));
-    gulp.src('bower_components/bootstrap-combobox/js/*').pipe(gulp.dest('public/lib/bootstrap-combobox'));
-    gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/*').pipe(gulp.dest('public/lib/bootstrap-datetimepicker/css'));
-    gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/js/*').pipe(gulp.dest('public/lib/bootstrap-datetimepicker/js'));
-    gulp.src('bower_components/ckeditor/**/*').pipe(gulp.dest('public/lib/ckeditor'));
-    gulp.src('bower_components/font-awesome/css/*').pipe(gulp.dest('public/lib/font-awesome/css'));
-    gulp.src('bower_components/font-awesome/fonts/*').pipe(gulp.dest('public/lib/font-awesome/fonts'));
-    gulp.src('bower_components/font-awesome/less/*').pipe(gulp.dest('public/lib/font-awesome/less'));
-    gulp.src('bower_components/font-awesome/scss/*').pipe(gulp.dest('public/lib/font-awesome/scss'));
-    gulp.src('bower_components/jquery-php/javascript/jquery.php.js').pipe(gulp.dest('public/lib/jquery-php'));
-    gulp.src('bower_components/jquery-php/library/jQuery.php').pipe(gulp.dest('./'));
-    gulp.src('bower_components/jquery/dist/jquery.min.js').pipe(gulp.dest('public/lib/jquery'));
+const cp = (src, dest) => {
+    gulp.src(src).pipe(gulp.dest(dest));
+}
+
+
+gulp.task('copy-resources',  (done) => {
+    cp('bower_components/bootstrap/dist/**/*','public/lib/bootstrap');
+    cp('bower_components/bootstrap-combobox/css/*','public/lib/bootstrap-combobox');
+    cp('bower_components/bootstrap-combobox/js/*','public/lib/bootstrap-combobox');
+    cp('bower_components/eonasdan-bootstrap-datetimepicker/build/css/*','public/lib/bootstrap-datetimepicker/css');
+    cp('bower_components/eonasdan-bootstrap-datetimepicker/build/js/*','public/lib/bootstrap-datetimepicker/js');
+    cp('bower_components/ckeditor/**/*','public/lib/ckeditor');
+    cp('bower_components/font-awesome/css/*','public/lib/font-awesome/css');
+    cp('bower_components/font-awesome/fonts/*','public/lib/font-awesome/fonts');
+    cp('bower_components/font-awesome/less/*','public/lib/font-awesome/less');
+    cp('bower_components/font-awesome/scss/*','public/lib/font-awesome/scss');
+    cp('bower_components/jquery-php/javascript/jquery.php.js','public/lib/jquery-php');
+    cp('bower_components/jquery-php/library/jQuery.php','./');
+    cp('bower_components/jquery/dist/jquery.min.js','public/lib/jquery');
     gulp.src('bower_components/jquery-ui/ui/minified/jquery-ui.custom.min.js').pipe(rename('jquery-ui-custom.min.js')).pipe(gulp.dest('public/lib/jquery-ui'));
-    gulp.src('bower_components/jquery-ui/themes/smoothness/jquery.ui.theme.css').pipe(gulp.dest('public/lib/jquery-ui'));
-    gulp.src('bower_components/jquery-ui/themes/smoothness/images/*').pipe(gulp.dest('public/lib/jquery-ui/images'));
-    gulp.src('bower_components/moment/min/moment.min.js').pipe(gulp.dest('public/lib/moment'));
-    gulp.src('bower_components/summernote/dist/*').pipe(gulp.dest('public/lib/summernote'));
-    gulp.src('vendor/royalsoftkv/smartyfaces-core/assets/**/*').pipe(gulp.dest('public/lib/smartyfaces'));
-    gulp.src('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css').pipe(gulp.dest('public/lib/smartyfaces'));
-    gulp.src('vendor/royalsoftkv/smartyfaces-core/img/*').pipe(gulp.dest('public/lib/smartyfaces/img'));
-    gulp.src('assets/summernote/summernote-copypaste.js').pipe(gulp.dest('public/lib/summernote'));
-    gulp.src('bower_components/codemirror/lib/*').pipe(gulp.dest('public/lib/codemirror'));
-    gulp.src('bower_components/codemirror/mode/smarty/smarty.js').pipe(gulp.dest('public/lib/codemirror'));
-    gulp.src('assets/js/*').pipe(gulp.dest('public/js'));
-    gulp.src('assets/css/*').pipe(gulp.dest('public/css'));
-    gulp.src('assets/img/*').pipe(gulp.dest('public/img'));
-    gulp.src('bower_components/SyntaxHighlighter/styles/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/styles'));
-    gulp.src('bower_components/SyntaxHighlighter/scripts/*').pipe(gulp.dest('public/lib/SyntaxHighlighter/scripts'));
-    gulp.src('bower_components/socket.io-client/dist/socket.io.dev.js').pipe(gulp.dest('public/lib/socket.io'));
+    cp('bower_components/jquery-ui/themes/smoothness/jquery.ui.theme.css','public/lib/jquery-ui');
+    cp('bower_components/jquery-ui/themes/smoothness/images/*','public/lib/jquery-ui/images');
+    cp('bower_components/moment/min/moment.min.js','public/lib/moment');
+    cp('bower_components/summernote/dist/*','public/lib/summernote');
+    cp('vendor/royalsoftkv/smartyfaces-core/assets/**/*','public/lib/smartyfaces');
+    cp('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css','public/lib/smartyfaces');
+    // cp('vendor/royalsoftkv/smartyfaces-core/img/*','public/lib/smartyfaces/img'));
+    cp('assets/summernote/summernote-copypaste.js','public/lib/summernote');
+    cp('bower_components/codemirror/lib/*','public/lib/codemirror');
+    cp('bower_components/codemirror/mode/smarty/smarty.js','public/lib/codemirror');
+    cp('assets/js/*','public/js');
+    cp('assets/css/*','public/css');
+    cp('assets/img/*','public/img');
+    cp('bower_components/SyntaxHighlighter/styles/*','public/lib/SyntaxHighlighter/styles');
+    cp('bower_components/SyntaxHighlighter/scripts/*','public/lib/SyntaxHighlighter/scripts');
+    cp('bower_components/socket.io-client/dist/socket.io.js','public/lib/socket.io');
     done();
 });
 
-gulp.task('exec', function () {
+gulp.task('exec',  (done) => {
     exec('ls', function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
     });
 });
 
-gulp.task('scripts', function () {
-    return gulp.src([
+gulp.task('scripts',  (done) => {
+    gulp.src([
         'bower_components/jquery-ui/ui/jquery.ui.core.js',
         'bower_components/jquery-ui/ui/jquery.ui.widget.js',
         'bower_components/jquery-ui/ui/jquery.ui.mouse.js',
@@ -87,8 +92,9 @@ gulp.task('scripts', function () {
         .pipe(rename('jquery-ui-notooltip.custom.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/lib/jquery-ui'));
+    done();
 });
 
-gulp.task('default', gulp.series('copy-resources', 'scripts', function(done) {
+gulp.task('default', gulp.series('copy-resources', 'scripts', (done) => {
     done();
 }));
