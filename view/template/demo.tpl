@@ -1,5 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SmartyFaces Showcase</title>
 		{SmartyFaces::loadCss()}
 		<link href="lib/SyntaxHighlighter/styles/shCore.css" rel="stylesheet"/>
