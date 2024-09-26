@@ -5,9 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SmartyFaces Showcase</title>
 		{SmartyFaces::loadCss()}
-		<link href="lib/SyntaxHighlighter/styles/shCore.css" rel="stylesheet"/>
-		<link href="lib/SyntaxHighlighter/styles/shThemeDefault.css" rel="stylesheet"/>
-		<link href="lib/codemirror/codemirror.css" rel="stylesheet"/>
+		<link href="lib/codemirror/lib/codemirror.css" rel="stylesheet"/>
 		<link href="css/demo.css" rel="stylesheet"/>
 	</head>
 	<body class="container-fluid">
@@ -38,24 +36,33 @@
 		<hr/>
 		
 		{SmartyFaces::loadJs()}
-		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/XRegExp.js"></script>
-		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/shCore.js"></script>
-		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/shLegacy.js"></script>
-		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/shBrushPhp.js"></script>
-		<script type="text/javascript" src="lib/SyntaxHighlighter/scripts/shBrushXml.js"></script>
-		<script src="lib/codemirror/codemirror.js"></script>
-		<script src="lib/codemirror/smarty.js"></script>
+		<script src="lib/codemirror/lib/codemirror.js"></script>
+		<script src="lib/codemirror/addon/edit/matchbrackets.js"></script>
+		<script src="lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="lib/codemirror/mode/xml/xml.js"></script>
+		<script src="lib/codemirror/mode/javascript/javascript.js"></script>
+		<script src="lib/codemirror/mode/css/css.js"></script>
+		<script src="lib/codemirror/mode/clike/clike.js"></script>
+		<script src="lib/codemirror/mode/php/php.js"></script>
+		<script src="lib/codemirror/mode/smarty/smarty.js"></script>
 		<script type="text/javascript">
             $(function() {
-                SyntaxHighlighter.all();
                 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                     lineNumbers: true,
                     mode: "smarty",
                     readOnly : true,
                     viewportMargin: Infinity
                 });
+				var editor2 = CodeMirror.fromTextArea(document.getElementById("code_php"), {
+					lineNumbers: true,
+					matchBrackets: true,
+					mode: "application/x-httpd-php",
+					readOnly : true,
+					viewportMargin: Infinity
+				});
                 $('#tabs-tabs').on('shown.bs.tab', function (e) {
                     editor.refresh();
+					editor2.refresh();
                 })
             });
 		</script>

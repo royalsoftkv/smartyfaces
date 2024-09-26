@@ -26,14 +26,13 @@ gulp.task('copy-resources',  (done) => {
     cpr('bower_components/bootstrap-combobox/css/bootstrap-combobox.css','public/lib/bootstrap-combobox/bootstrap-combobox.css');
     cpr('bower_components/bootstrap-combobox/js/bootstrap-combobox.js','public/lib/bootstrap-combobox/bootstrap-combobox.js');
     cpr('node_modules/ckeditor','public/lib/ckeditor');
-    cpr('bower_components/font-awesome/css','public/lib/font-awesome/css');
-    cpr('bower_components/font-awesome/fonts','public/lib/font-awesome/fonts');
-    cpr('bower_components/font-awesome/less','public/lib/font-awesome/less');
-    cpr('bower_components/font-awesome/scss','public/lib/font-awesome/scss');
+    cpr('node_modules/font-awesome/css','public/lib/font-awesome/css');
+    cpr('node_modules/font-awesome/fonts','public/lib/font-awesome/fonts');
+    cpr('node_modules/font-awesome/less','public/lib/font-awesome/less');
+    cpr('node_modules/font-awesome/scss','public/lib/font-awesome/scss');
     cp('bower_components/jquery-php/javascript/jquery.php.js','public/lib/jquery-php');
     cp('bower_components/jquery-php/library/jQuery.php','./');
     cp('node_modules/jquery/dist/jquery.min.js','public/lib/jquery');
-    cp('bower_components/moment/min/moment.min.js','public/lib/moment');
     cpr('node_modules/summernote/dist','public/lib/summernote', () => {
         cpr('node_modules/summernote/dist/plugin/hello/summernote-ext-hello.js','public/lib/summernote/summernote-ext-hello.js');
     });
@@ -41,15 +40,13 @@ gulp.task('copy-resources',  (done) => {
         cpr('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css','public/lib/smartyfaces/smartyfaces.css');
     });
     // cp('vendor/royalsoftkv/smartyfaces-core/img/*','public/lib/smartyfaces/img'));
-    cpr('bower_components/codemirror/lib','public/lib/codemirror', () => {
-        cpr('bower_components/codemirror/mode/smarty/smarty.js','public/lib/codemirror/smarty.js');
-    });
+    cpr('node_modules/codemirror/lib','public/lib/codemirror/lib');
+    cpr('node_modules/codemirror/mode','public/lib/codemirror/mode');
+    cpr('node_modules/codemirror/addon','public/lib/codemirror/addon');
 
     cpr('assets/js','public/js');
     cpr('assets/css','public/css');
     cpr('assets/img','public/img');
-    cpr('bower_components/SyntaxHighlighter/styles','public/lib/SyntaxHighlighter/styles');
-    cpr('bower_components/SyntaxHighlighter/scripts','public/lib/SyntaxHighlighter/scripts');
     cp('bower_components/socket.io-client/dist/socket.io.js','public/lib/socket.io');
     done();
 });

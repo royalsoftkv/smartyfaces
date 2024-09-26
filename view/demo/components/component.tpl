@@ -43,12 +43,10 @@
 				{include file="demo/components/attributes_table.tpl"}
 			{/sf_tab}
 			{sf_tab header="Source"}
-				<textarea id="code">
-					{htmlspecialchars($smarty.capture.view)}
-				</textarea>
+				<textarea id="code">{htmlspecialchars($smarty.capture.view)}</textarea>
 			{/sf_tab}
 			{sf_tab header="PHP code"}
-				<pre class="brush: php">{DemoFunctions::getClassSource($tag)}</pre>
+			<textarea id="code_php">{DemoFunctions::getClassSource($tag)}</textarea>
 			{/sf_tab}
 		{/sf_tabs}
 

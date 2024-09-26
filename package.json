@@ -28,7 +28,9 @@
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.7.1",
     "ckeditor": "^4.12.1",
-    "summernote": "^0.8.20"
+    "summernote": "^0.8.20",
+    "font-awesome": "^4.7.0",
+    "codemirror": "^5.65.18"
   },
   "dependencies": {
     "fs-extra": "^11.2.0"
