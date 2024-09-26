@@ -19,10 +19,16 @@
   ],
   "require": {
     "royalsoftkv/php-activerecord": "dev-smartyfaces",
-    "smarty/smarty": "^v4.0.0",
+    "smarty/smarty": "^v4.5.4",
     "royalsoftkv/smartyfaces-core": "dev-master"
   },
   "autoload": {
     "classmap": ["vendor/royalsoftkv/smartyfaces-core","src"]
+  },
+  "scripts": {
+    "server": [
+      "Composer\\Config::disableProcessTimeout",
+      "cd public && php -S 127.0.0.1:5000"
+    ]
   }
 }

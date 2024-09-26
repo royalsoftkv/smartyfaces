@@ -14,11 +14,9 @@
   "dependencies": {
     "bootstrap": "3.3.4",
     "bootstrap-combobox": "https://github.com/royalsoftkv/bootstrap-combobox.git#1.1.6-sf",
-    "eonasdan-bootstrap-datetimepicker": "4.14.30",
     "ckeditor": "4.5.5",
     "font-awesome": "4.3.0",
     "jquery-php": "https://github.com/royalsoftkv/jquery-php.git",
-    "jquery": "1.11.1",
     "jquery-ui": "1.10.4",
     "moment": "2.10.3",
     "summernote": "0.6.7",

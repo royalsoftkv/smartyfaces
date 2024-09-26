@@ -17,7 +17,7 @@
 							value="#[\$demoView->date]"
 							required=true
 							attachMessage=$demoView->attachMessage
-							size=50
+							size=10
 							dateFormat=$demoView->dateFormat class="my-datepicker"
 							converter="{if $demoView->useConverter eq 1}MySqlDateConverter{/if}"
 							validator="DemoView::dateValidator"
@@ -30,7 +30,10 @@
 							rendered=$demoView->rendered
 							action="{if $demoView->action}#[\$demoView->executeAction()]{/if}"
 							bootstrapIcon="{if $demoView->bootstrapIcon}time{else}calendar{/if}"
-							datepickerOptions=['calendarWeeks'=>true]}
+							datepickerOptions=['calendarWeeks'=>true]
+							time=$demoView->time
+							block=$demoView->block
+						}
 						<br/>
 						{sf_commandbutton value="Save" action="#[\$demoView->submitDate()]"}
 						<br/>
@@ -57,6 +60,8 @@
 							{sf_checkbox value='#[$demoView->action]' action="" immediate=true label="Attach action on datepicker"} 
 							{sf_checkbox value='#[$demoView->rendered]' action="" immediate=true label="Rendered datepicker"} 
 							{sf_checkbox value='#[$demoView->bootstrapIcon]' action="" immediate=true label="Change bootstrap icon"} 
+							{sf_checkbox value='#[$demoView->time]' action="" immediate=true label="Add time"}
+							{sf_checkbox value='#[$demoView->block]' action="" immediate=true label="Display as block"}
 						</div>
 						
 					</div>

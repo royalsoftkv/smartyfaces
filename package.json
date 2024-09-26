@@ -25,7 +25,8 @@
     "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.7.1"
   },
   "dependencies": {
     "fs-extra": "^11.2.0"

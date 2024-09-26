@@ -16,6 +16,9 @@ class DatepickerView {
 	public $action;
 	public $rendered = true;
 	public $bootstrapIcon;
+
+    public $time;
+    public $block;
 	
 	function __construct(){
 		$this->resetAttributes();

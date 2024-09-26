@@ -25,8 +25,6 @@ gulp.task('copy-resources',  (done) => {
     cpr('bower_components/bootstrap/dist','public/lib/bootstrap');
     cpr('bower_components/bootstrap-combobox/css/bootstrap-combobox.css','public/lib/bootstrap-combobox/bootstrap-combobox.css');
     cpr('bower_components/bootstrap-combobox/js/bootstrap-combobox.js','public/lib/bootstrap-combobox/bootstrap-combobox.js');
-    cpr('bower_components/eonasdan-bootstrap-datetimepicker/build/css','public/lib/bootstrap-datetimepicker/css');
-    cpr('bower_components/eonasdan-bootstrap-datetimepicker/build/js','public/lib/bootstrap-datetimepicker/js');
     cpr('bower_components/ckeditor','public/lib/ckeditor');
     cpr('bower_components/font-awesome/css','public/lib/font-awesome/css');
     cpr('bower_components/font-awesome/fonts','public/lib/font-awesome/fonts');
@@ -34,7 +32,7 @@ gulp.task('copy-resources',  (done) => {
     cpr('bower_components/font-awesome/scss','public/lib/font-awesome/scss');
     cp('bower_components/jquery-php/javascript/jquery.php.js','public/lib/jquery-php');
     cp('bower_components/jquery-php/library/jQuery.php','./');
-    cp('bower_components/jquery/dist/jquery.min.js','public/lib/jquery');
+    cp('node_modules/jquery/dist/jquery.min.js','public/lib/jquery');
     gulp.src('bower_components/jquery-ui/ui/minified/jquery-ui.custom.min.js').pipe(rename('jquery-ui-custom.min.js')).pipe(gulp.dest('public/lib/jquery-ui'));
     cp('bower_components/jquery-ui/themes/smoothness/jquery.ui.theme.css','public/lib/jquery-ui');
     cpr('bower_components/jquery-ui/themes/smoothness/images','public/lib/jquery-ui/images');
