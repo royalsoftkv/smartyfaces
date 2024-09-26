@@ -47,7 +47,6 @@
 		<script src="lib/codemirror/smarty.js"></script>
 		<script type="text/javascript">
             $(function() {
-                $('#tabs-tabs').tabs();
                 SyntaxHighlighter.all();
                 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                     lineNumbers: true,

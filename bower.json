@@ -17,7 +17,6 @@
     "ckeditor": "4.5.5",
     "font-awesome": "4.3.0",
     "jquery-php": "https://github.com/royalsoftkv/jquery-php.git",
-    "jquery-ui": "1.10.4",
     "moment": "2.10.3",
     "summernote": "0.6.7",
     "codemirror": "5.37.0",
