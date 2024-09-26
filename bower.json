@@ -12,9 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "3.3.4",
     "bootstrap-combobox": "https://github.com/royalsoftkv/bootstrap-combobox.git#1.1.6-sf",
-    "jquery-php": "https://github.com/royalsoftkv/jquery-php.git",
-    "socket.io-client": ""
+    "jquery-php": "https://github.com/royalsoftkv/jquery-php.git"
   }
 }

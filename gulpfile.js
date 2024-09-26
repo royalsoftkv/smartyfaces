@@ -22,7 +22,7 @@ const cpr = (src, dest, cb) => {
 
 
 gulp.task('copy-resources',  (done) => {
-    cpr('bower_components/bootstrap/dist','public/lib/bootstrap');
+    cpr('node_modules/bootstrap/dist','public/lib/bootstrap');
     cpr('bower_components/bootstrap-combobox/css/bootstrap-combobox.css','public/lib/bootstrap-combobox/bootstrap-combobox.css');
     cpr('bower_components/bootstrap-combobox/js/bootstrap-combobox.js','public/lib/bootstrap-combobox/bootstrap-combobox.js');
     cpr('node_modules/ckeditor','public/lib/ckeditor');
