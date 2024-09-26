@@ -1,5 +1,5 @@
 {capture name=desc}
-	Used component is <a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap 3 datetimepicker</a>
+
 {/capture}
 
 {capture name=view}
