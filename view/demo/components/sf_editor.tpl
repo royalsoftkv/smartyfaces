@@ -13,7 +13,7 @@
 						{sf_editor id="editor" value="#[\$bean->data['editor']]" required=$bean->data.required attachMessage=true
 							rendered=$bean->data.rendered validator="{if $bean->data.validator|default:false}EditorView::editorValidator{/if}"
 							class="my-editor" disabled=$bean->data.disabled|default:false  width=500 height=300
-							summernoteOptions=$bean->summernoteOptions() summernotePlugins=['copypaste']
+							summernoteOptions=$bean->summernoteOptions() summernotePlugins=['ext-hello']
 							editor=$bean->data["editortype"] editorconfig=['customConfig'=>'../../js/ckeditor_config.js']}
 						<br/>
 						{sf_commandbutton value="Submit" action="#[\$bean->submit()]"}
@@ -26,7 +26,7 @@
 							{sf_checkbox value='#[$bean->data["disabled"]]' immediate=true action="" label="Disabled"}
 							{sf_checkbox value='#[$bean->data["config"]]' immediate=true action="" label="Use simple theme"}
 							Editor type
-							{sf_selectonemenu value='#[$bean->data["editortype"]]' values=['summernote'=>'Summernote','ckeditor'=>'CKEditor'] action=""}
+							{sf_selectonemenu value='#[$bean->data["editortype"]]' immediate=true values=['summernote'=>'Summernote','ckeditor'=>'CKEditor'] action=""}
 						</div>
 					</div>
 			</div>

@@ -25,7 +25,7 @@ gulp.task('copy-resources',  (done) => {
     cpr('bower_components/bootstrap/dist','public/lib/bootstrap');
     cpr('bower_components/bootstrap-combobox/css/bootstrap-combobox.css','public/lib/bootstrap-combobox/bootstrap-combobox.css');
     cpr('bower_components/bootstrap-combobox/js/bootstrap-combobox.js','public/lib/bootstrap-combobox/bootstrap-combobox.js');
-    cpr('bower_components/ckeditor','public/lib/ckeditor');
+    cpr('node_modules/ckeditor','public/lib/ckeditor');
     cpr('bower_components/font-awesome/css','public/lib/font-awesome/css');
     cpr('bower_components/font-awesome/fonts','public/lib/font-awesome/fonts');
     cpr('bower_components/font-awesome/less','public/lib/font-awesome/less');
@@ -34,8 +34,8 @@ gulp.task('copy-resources',  (done) => {
     cp('bower_components/jquery-php/library/jQuery.php','./');
     cp('node_modules/jquery/dist/jquery.min.js','public/lib/jquery');
     cp('bower_components/moment/min/moment.min.js','public/lib/moment');
-    cpr('bower_components/summernote/dist','public/lib/summernote', () => {
-        cpr('assets/summernote/summernote-copypaste.js','public/lib/summernote/summernote-copypaste.js');
+    cpr('node_modules/summernote/dist','public/lib/summernote', () => {
+        cpr('node_modules/summernote/dist/plugin/hello/summernote-ext-hello.js','public/lib/summernote/summernote-ext-hello.js');
     });
     cpr('vendor/royalsoftkv/smartyfaces-core/assets','public/lib/smartyfaces', () => {
         cpr('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css','public/lib/smartyfaces/smartyfaces.css');

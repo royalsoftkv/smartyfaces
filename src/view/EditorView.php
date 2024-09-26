@@ -31,7 +31,7 @@ class EditorView {
 				array("fontsize",array('fontsize')),
 				array("color",array('color')),
 				array("para",array('ul', 'ol', 'paragraph')),
-				array("copypaste",array('cut', 'copy', 'paste')),
+				array("hello",array('hello')),
 				array("height",array('height')),
 				array("table",array('table')),
 				array("insert",array('link', 'picture', 'hr')),
