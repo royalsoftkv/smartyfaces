@@ -131,14 +131,11 @@ class DemoFunctions {
 	}
 	
 	static function getSkin() {
-		if(isset($_SESSION['skin'])) {
-			return $_SESSION['skin'];
-		}
-		return "bootstrap";
+		return SFSession::get("skin", "bootstrap");
 	}
 	
 	static function changeSkin($skin) {
-		$_SESSION['skin']=$skin;
+        SFSession::set("skin", $skin);
 		SmartyFaces::reload();
 	}
 	
