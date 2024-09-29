@@ -47,7 +47,7 @@ gulp.task('copy-resources',  (done) => {
     cpr('assets/js','public/js');
     cpr('assets/css','public/css');
     cpr('assets/img','public/img');
-    cp('bower_components/socket.io-client/dist/socket.io.js','public/lib/socket.io');
+    cp('node_modules/socket.io-client/dist/socket.io.js','public/lib/socket.io');
     done();
 });
 

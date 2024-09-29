@@ -31,7 +31,8 @@
     "summernote": "^0.8.20",
     "font-awesome": "^4.7.0",
     "codemirror": "^5.65.18",
-    "bootstrap": "^3.4.1"
+    "bootstrap": "^5.3.3",
+    "socket.io-client": "^4.8.0"
   },
   "dependencies": {
     "fs-extra": "^11.2.0"

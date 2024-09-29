@@ -4,17 +4,25 @@
 	
 	<div class="row">
 		<div class="col-sm-9">
-			<ol class="breadcrumb">
-			  <li><a href="?page=demo/home">Components</a></li>
-			  <li class="active">{$tag}</li>		
-			</ol>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="?page=demo/home">Components</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{$tag}</li>
+				</ol>
+			</nav>
 		</div>
 		{$skin=DemoFunctions::getSkin()}
 		<div class="col-sm-3 text-right">
-			<ul class="nav nav-pills pull-right">
-			  <li class="{if $skin eq 'bootstrap'}active{/if}">{sf_link value="Bootstrap" action="DemoFunctions::changeSkin('bootstrap')"}</li>
-			  <li class="{if $skin eq 'default'}active{/if}">{sf_link value="Default" action="DemoFunctions::changeSkin('default')"}</li>
-			  <li class="{if $skin eq 'none'}active{/if}">{sf_link value="None" action="DemoFunctions::changeSkin('none')"}</li>
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					{sf_link value="Bootstrap" action="DemoFunctions::changeSkin('bootstrap')" class="nav-link {if $skin eq 'bootstrap'}active{/if}"}
+				</li>
+				<li class="nav-item">
+					{sf_link value="Default" action="DemoFunctions::changeSkin('default')" class="nav-link {if $skin eq 'default'}active{/if}"}
+				</li>
+				<li class="nav-item">
+					{sf_link value="None" action="DemoFunctions::changeSkin('none')" class="nav-link {if $skin eq 'none'}active{/if}"}
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -37,6 +45,8 @@
 		{$smarty.capture.text2|default:''}
 		
 		<hr/>
+
+
 		
 		{sf_tabs id="tabs"}
 			{sf_tab header="Attributes"}
@@ -46,7 +56,7 @@
 				<textarea id="code">{htmlspecialchars($smarty.capture.view)}</textarea>
 			{/sf_tab}
 			{sf_tab header="PHP code"}
-			<textarea id="code_php">{DemoFunctions::getClassSource($tag)}</textarea>
+				<textarea id="code_php">{DemoFunctions::getClassSource($tag)}</textarea>
 			{/sf_tab}
 		{/sf_tabs}
 

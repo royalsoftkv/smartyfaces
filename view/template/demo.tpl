@@ -12,6 +12,7 @@
 		<div class="page-header" style="margin-top:20px">
 		  <h1>SmartyFaces <small>Showcase</small></h1>
 		</div>
+
 		<div class="row">
 			<div class="col-sm-2">
 				{include file='template/menu.tpl'}
@@ -47,22 +48,29 @@
 		<script src="lib/codemirror/mode/smarty/smarty.js"></script>
 		<script type="text/javascript">
             $(function() {
-                var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                    lineNumbers: true,
-                    mode: "smarty",
-                    readOnly : true,
-                    viewportMargin: Infinity
-                });
-				var editor2 = CodeMirror.fromTextArea(document.getElementById("code_php"), {
-					lineNumbers: true,
-					matchBrackets: true,
-					mode: "application/x-httpd-php",
-					readOnly : true,
-					viewportMargin: Infinity
-				});
+				let el = document.getElementById("code");
+				let editor, editor2;
+				if(el) {
+					editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+						lineNumbers: true,
+						mode: "smarty",
+						readOnly : true,
+						viewportMargin: Infinity
+					});
+				}
+				let el2 = document.getElementById("code_php");
+				if(el2) {
+					editor2 = CodeMirror.fromTextArea(document.getElementById("code_php"), {
+						lineNumbers: true,
+						matchBrackets: true,
+						mode: "application/x-httpd-php",
+						readOnly : true,
+						viewportMargin: Infinity
+					});
+				}
                 $('#tabs-tabs').on('shown.bs.tab', function (e) {
-                    editor.refresh();
-					editor2.refresh();
+					editor && editor.refresh();
+					editor2 && editor2.refresh();
                 })
             });
 		</script>
