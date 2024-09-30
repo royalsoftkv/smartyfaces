@@ -13,11 +13,17 @@ class CheckboxView {
 	
 	public $name;
 	public $value2 = true;
-	public $block=false;
 	public $confirm;
+
+    public $check2;
+    public $boolean;
 	
 	function submit() {
-		jQuery::addMessage("Hello, ".$this->name.", you are ".($this->is_checked() ? "" : "not")." agree with terms!");
+        $val = $this->checked;
+        if(gettype($val)=="boolean") {
+            $val = "(boolean)" . ($val === true ? "true" : "false");
+        }
+		jQuery::addMessage("Hello, ".$this->name.", you are ".($this->is_checked() ? "" : "not")." agree with terms! [" . $val ."]");
 	}
 	
 	function is_checked(){
@@ -58,7 +64,13 @@ class CheckboxView {
 		$str = "You submitted ".$s;
 		jQuery::addMessage($str);
 	}
+
+    public static function validateCheck($formData,$id) {
+        $check = $formData[$id];
+        if($check) {
+            SmartyFacesMessages::addError($id, "Why you check me?");
+            return false;
+        }
+    }
 	
 }
-
-?>

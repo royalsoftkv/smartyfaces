@@ -22,13 +22,18 @@
 						action='#[$bean->action()]' immediate=$bean->immediate class=$bean->get_class() title="Click if you agree with terms"
 						disabled=$bean->disabled checkedValue="{if $bean->check}Y{else}1{/if}"  
 						unCheckedValue="{if $bean->check}N{else}0{/if}" rendered=$bean->rendered label="I agree with terms"
-						block=$bean->block confirm="{if $bean->confirm}Confirm check?{/if}"}
+						confirm="{if $bean->confirm}Confirm check?{/if}"
+						boolean=$bean->boolean}
 					
 					{sf_commandbutton value="Submit" action="#[\$bean->submit()]"}
 					<br/>
 					Checkbox with true/false
 					{sf_checkbox value='#[$bean->value2]' boolean=true}
 					{sf_commandbutton value="Submit 2" action="#[\$bean->submit2()]" immediate=true}
+					<hr/>
+					Checkbox with validator
+					{sf_checkbox validator="CheckboxView::validateCheck" label="You must check me" value='#[$bean->check2]' attachMessage=true}
+					{sf_commandbutton value="Submit" action=""}
 				</div>
 				<div class="col-sm-4">
 					<div class="well">
@@ -39,8 +44,8 @@
 						{sf_checkbox value='#[$bean->disabled]' action="" immediate=true label="Disabled"}
 						{sf_checkbox value='#[$bean->check]' action="" immediate=true label="Use different check/uncheck values"}
 						{sf_checkbox value='#[$bean->rendered]' action="" immediate=true label="Rendered"}
-						{sf_checkbox value='#[$bean->block]' action="" immediate=true label="Display checkbox as block"}
 						{sf_checkbox value='#[$bean->confirm]' action="" immediate=true label="Add confirm message"}
+						{sf_checkbox value='#[$bean->boolean]' action="" immediate=true label="Store and process value of chekbox as boolean"}
 					</div>
 				</div>
 			</div>
