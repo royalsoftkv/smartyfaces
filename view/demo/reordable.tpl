@@ -40,20 +40,16 @@
 {$template="{Smartyfaces::$config['root_path']}/view/demo/reordable.tpl"}
 {eval $smarty.capture.view}
 
-<div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Source</a></li>
-		<li><a href="#tabs-2">PHP code - ReordableView</a></li>
-	</ul>
-	<div id="tabs-1">
-		<textarea id="code">
-			{htmlspecialchars($smarty.capture.view)}
-		</textarea>
-	</div>
-	<div id="tabs-2">
-		<pre class="brush: php">{DemoFunctions::getClassNameSource('ReordableView')}</pre>
-	</div>
-</div>
+
+
+	{sf_tabs id="tabs"}
+	{sf_tab header="Source"}
+		<textarea id="code">{htmlspecialchars($smarty.capture.view)}</textarea>
+	{/sf_tab}
+	{sf_tab header="PHP code"}
+		<textarea id="code_php">{DemoFunctions::getClassNameSource('ReordableView')}</textarea>
+	{/sf_tab}
+	{/sf_tabs}
 
 {/block}
 

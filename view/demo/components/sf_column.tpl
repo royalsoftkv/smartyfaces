@@ -14,14 +14,14 @@
 			<div class="row">
 				<div class="col-sm-8">
 						{sf_datatable value=$bean->data var=row}
-							{sf_column class="main" header="ISO"}
+							{sf_column class="main" header="ISO" id="iso" title="ISO header"}
 								{$row.iso}
 							{/sf_column}
 							{sf_column header='<span style="font-style:italic;font-weight:bold;text-align:left;">Name</span>' 
 								style="font-style:italic;font-weight:bold"}
 								{$row.name}
 							{/sf_column}
-							{sf_column header="ISO3" title="Three letter code of country"}
+							{sf_column header="ISO3" title="Three letter code of country" style="background-color: #ccc"}
 								{$row.iso3}
 							{/sf_column}
 							{sf_column rendered=$bean->rendered width="10%" align="center"}

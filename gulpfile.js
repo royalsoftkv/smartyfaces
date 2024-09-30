@@ -48,6 +48,7 @@ gulp.task('copy-resources',  (done) => {
     cpr('assets/css','public/css');
     cpr('assets/img','public/img');
     cp('node_modules/socket.io-client/dist/socket.io.js','public/lib/socket.io');
+    cpr('node_modules/sortablejs/Sortable.min.js','public/lib/sortablejs/Sortable.min.js');
     done();
 });
 
