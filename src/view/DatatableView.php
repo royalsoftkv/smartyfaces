@@ -5,7 +5,10 @@ class DatatableView {
 	public $data;
 	public $emptyTable;
 	public $selected;
-	public $responsive;
+	public $responsive = true;
+    public $style;
+    public $class;
+    public $hideColumns;
 	
 	function __construct(){
 		$this->data=SampleData::loadData(10);
@@ -26,6 +29,13 @@ class DatatableView {
 			return "";
 		}
 	}
+
+    function getVisibleColumns() {
+        if($this->hideColumns) {
+            return ["index", "iso", "name"];
+        }
+        return [];
+    }
 	
 }
 

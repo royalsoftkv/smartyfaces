@@ -70,7 +70,7 @@ class Paginator {
         public function buildQuery($sql) {
                 $limit=$this->getLimit();
                 $offset=$this->getOffset();
-                $sql=str_replace("select","select SQL_CALC_FOUND_ROWS ",$sql);
+                $sql=str_replace("select ","select SQL_CALC_FOUND_ROWS ",$sql);
                 $sql.=" limit $offset, $limit";
                 return $sql;
         }

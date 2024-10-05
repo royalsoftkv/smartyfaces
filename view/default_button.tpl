@@ -1,14 +1,14 @@
 {extends file='template/demo.tpl'}
 {block name=content}
 
-	{{sf_view id="default_button"}}
+	{sf_view id="default_button"}
 	{sf_form}
 	{sf_in name=bean class=DefaultButtonView}
 	
 	<div class="well">
 		{sf_messages global=true}
 		<div class="row">
-			<div class="col-sm-2 scope1 well wekk-sm">
+			<div class="col-sm-2 scope1 well well-sm">
 				{sf_inputtext value="#[\$bean->input1]"}
 				<span class="text-muted">
 					Enter on this will submit only this block
@@ -44,6 +44,6 @@
 	</div>
 	
 	{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 					
 {/block}

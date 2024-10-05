@@ -6,6 +6,7 @@ class CommandlinkView {
 	
 	function __construct(){
 		$this->data['rendered']=true;
+		$this->data['immediate']=true;
 	}
 	
 	function action() {
@@ -14,7 +15,10 @@ class CommandlinkView {
 		SmartyFacesMessages::addGlobalMessage("info", $msg);
 		
 	}
-	
+
+    function clear() {
+        $this->data['name']=null;
+    }
 	
 }
 

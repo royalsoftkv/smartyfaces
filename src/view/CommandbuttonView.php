@@ -3,10 +3,12 @@
 class CommandbuttonView {
 	
 	public $data;
+    public $submitted2;
 	
 	function __construct(){
 		$this->data['rendered']=true;
 		$this->data['default']=false;
+		$this->data['immediate']=true;
 	}
 	
 	function action() {
@@ -18,6 +20,7 @@ class CommandbuttonView {
 	
 	function submit2() {
 		SmartyFacesMessages::addGlobalMessage("info", "You submitted button 2");
+        $this->submitted2 = true;
 	}
 	
 	

@@ -10,17 +10,18 @@
 			</style>
 			<div class="row">
 				<div class="col-sm-8">
-						{sf_datatable value=$bean->countries() var=country style="width:500px;" class="my-table" index=index
+						{sf_datatable id="my-data-table" value=$bean->countries() var=country style="{if $bean->style}width:500px;{/if}"
+							class="{if $bean->class}my-table{/if}" index=index
 							emptyRowsMessage="There are no records in this table" rowKeyVar=row rowSelection=$bean->selected
 							header="SmartyFaces data table" rowclass='$template->getTemplateVars(\'bean\')->getRowClass($row)'
-							responsive=$bean->responsive}
-							{sf_column header=Index}
+							responsive=$bean->responsive visibleColumns=$bean->getVisibleColumns()}
+							{sf_column header=Index id=index}
 								{sf_commandlink value="$index" action="#[\$bean->selected={$index}]"}
 							{/sf_column}
-							{sf_column header=ISO}
+							{sf_column header=ISO id=iso}
 								{$country.iso}
 							{/sf_column}
-							{sf_column header=Name}
+							{sf_column header=Name id=name}
 								{$country.name}
 							{/sf_column}
 							{sf_column header=Iso3}
@@ -45,8 +46,11 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="well">
+							{sf_checkbox value='#[$bean->style]' action="" immediate=true label="Add custom style"}
+							{sf_checkbox value='#[$bean->class]' action="" immediate=true label="Add custom class"}
 							{sf_checkbox value='#[$bean->emptyTable]' action="" immediate=true label="Empty table"}
-							{sf_checkbox value='#[$bean->responsive]' action="" immediate=true label="Responsive table (used for bootstrap)"}
+							{sf_checkbox value='#[$bean->responsive]' action="" immediate=true label="Responsive table"}
+							{sf_checkbox value='#[$bean->hideColumns]' action="" immediate=true label="Hide columns"}
 						</div>
 					</div>
 			</div>
@@ -56,5 +60,12 @@
 		
 		{/sf_form}
 	{{/sf_view}}
+
+
+	<style>
+		.my-table thead th {
+			background-color: blue;
+		}
+	</style>
 {/literal}
 {/capture}

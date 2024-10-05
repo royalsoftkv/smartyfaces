@@ -68,9 +68,21 @@
 						viewportMargin: Infinity
 					});
 				}
+				let el3 = document.getElementById("code_php_2");
+				let editor3;
+				if(el3) {
+					editor3 = CodeMirror.fromTextArea(document.getElementById("code_php_2"), {
+						lineNumbers: true,
+						matchBrackets: true,
+						mode: "application/x-httpd-php",
+						readOnly : true,
+						viewportMargin: Infinity
+					});
+				}
                 $('#tabs-tabs').on('shown.bs.tab', function (e) {
 					editor && editor.refresh();
 					editor2 && editor2.refresh();
+					editor3 && editor3.refresh();
                 })
             });
 		</script>
