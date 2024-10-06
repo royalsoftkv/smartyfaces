@@ -14,12 +14,24 @@
 			<div class="row">
 				<div class="col-sm-8">
 					<div class="col-sm-4">
-						Required field {sf_inputtext value="#[\$bean->name]" required=true attachMessage=true}
+						<div class="d-flex gap-2 align-items-center">
+							Required field
+							{sf_inputtext value="#[\$bean->name]" required=true attachMessage=true}
+						</div>
 						<br/>
-						{sf_fileupload action="#[\$bean->fileUploaded()]" id="upload" value="Upload" rendered=$bean->rendered
-							acceptTypes=$bean->acceptTypes resetCtrl=Back maxSize=$bean->maxSize 
-							buttonClass="{if $bean->buttonClass}upload-btn{/if}" immediate=$bean->immediate
-							fileClass="{if $bean->fileClass}file-btn{/if}" multiple=$bean->multipleUpload}
+						{sf_fileupload
+							id="upload"
+							value="Upload"
+							rendered=$bean->rendered
+							action="#[\$bean->fileUploaded()]"
+							immediate=$bean->immediate
+							class="{if $bean->class}my-class{/if}"
+							acceptTypes=$bean->acceptTypes
+							maxSize=$bean->maxSize
+							buttonClass="{if $bean->buttonClass}upload-btn{/if}"
+							fileClass="{if $bean->fileClass}file-btn{/if}"
+							multiple=$bean->multipleUpload
+						}
 					</div>
 						
 					{sf_popup rendered=$bean->files header="Uploaded files" action="#[\$bean->files=null]" immediate=true}
@@ -31,18 +43,30 @@
 					
 				</div>
 				<div class="col-sm-4">
-					<div class="well">
+					<div class="bg-light border p-2">
 						{sf_checkbox value='#[$bean->rendered]' immediate=true action="" label="Rendered"}
-						Accepted types
-						{sf_inputtext value='#[$bean->acceptTypes]' style="display:inline" disabled=true}
-						<br/>
-						Max size
-						{sf_inputtext value='#[$bean->maxSize]' style="display:inline"}
-						<br/>
-						{sf_commandbutton value="Set" action="#[\$bean->set()]" immediate=true}
-						<br/>
-						{sf_checkbox value='#[$bean->buttonClass]' immediate=true action="" label="Use button class"}
 						{sf_checkbox value='#[$bean->immediate]' immediate=true action="" label="Immediate"}
+						{sf_checkbox value='#[$bean->class]' immediate=true action="" label="Use custom class"}
+						<div class="row align-items-center mb-2">
+							<div class="col-4">Accepted types</div>
+							<div class="col-8">
+								{sf_inputtext value='#[$bean->acceptTypes]'}
+							</div>
+						</div>
+						<div class="row align-items-center mb-2">
+							<div class="col-4">Max size</div>
+							<div class="col-8">
+								{sf_inputtext value='#[$bean->maxSize]'}
+							</div>
+						</div>
+						<div class="row align-items-center mb-2">
+							<div class="col-4"></div>
+							<div class="col-8">
+								{sf_commandbutton value="Set" action="#[\$bean->set()]" immediate=true}
+								{sf_commandbutton value="Reset" btnclass=secondary action="#[\$bean->reset()]" immediate=true}
+							</div>
+						</div>
+						{sf_checkbox value='#[$bean->buttonClass]' immediate=true action="" label="Use button class"}
 						{sf_checkbox value='#[$bean->fileClass]' immediate=true action="" label="Use File button class"}
 						{sf_checkbox value='#[$bean->multipleUpload]' immediate=true action="" label="Multiple files upload"}
 					</div>
@@ -51,5 +75,12 @@
 		
 		{/sf_form}
 	{{/sf_view}}
+
+	<style>
+		.my-class input[type=file] {
+			background-color: #66afe9;
+		}
+	</style>
+
 {/literal}
 {/capture}

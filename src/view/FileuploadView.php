@@ -1,6 +1,6 @@
 <?php 
 
-class FileuploadView {
+class FileuploadView extends CommonView {
 	
 	public $rendered=true;
 	public $acceptTypes = "jpg pdf png";
@@ -12,6 +12,10 @@ class FileuploadView {
 	
 	public $files;
 	public $name;
+
+    function __construct() {
+        $this->reset();
+    }
 	
 	function fileUploaded(){
 		$files=SmartyFaces::getUplaodFiles(false);
@@ -19,12 +23,12 @@ class FileuploadView {
 	}
 	
 	function set() {
-		if($this->maxSize>1000000) {
-			jQuery::addMessage("Demo upload is limited to 1MB!");
-			$this->maxSize=1000000;
-		}
 	}
-	
+
+    function reset() {
+        $this->acceptTypes = "jpg pdf png";
+        $this->maxSize=100000;
+    }
 	
 }
 
