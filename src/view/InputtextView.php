@@ -1,6 +1,6 @@
 <?php 
 
-class InputtextView {
+class InputtextView extends CommonView {
 	
 	public $name;
 	public $text;
@@ -12,6 +12,9 @@ class InputtextView {
 	public $placeholder='Enter text here...';
 	public $block=false;
 	public $readonly = false;
+	public $events;
+	public $onchange;
+	public $onkeyup;
 	
 	function __construct(){
 		$this->resetAttributes();
@@ -19,7 +22,11 @@ class InputtextView {
 	}
 	
 	public function submit() {
-		$this->text="You submitted: ".$this->name;
+		if(empty($this->name)) {
+			SmartyFacesMessages::addGlobalWarning("You did not enter any text");
+		} else {
+			SmartyFacesMessages::addGlobalSuccess("You submitted: ".$this->name);
+		}
 	}
 	
 	function reset() {
@@ -28,7 +35,7 @@ class InputtextView {
 	}
 	
 	function resetAttributes() {
-		$this->required=1;
+		$this->required=false;
 		$this->size=null;
 		$this->type='text';
 		$this->disabled=0;
@@ -56,8 +63,13 @@ class InputtextView {
 	function change() {
 		$this->text="You changed text: ".$this->name. " and action data is ".SmartyFacesContext::$actionData;
 	}
-	
 
+	static function textValidator($formData,$id) {
+		$val=$formData[$id];
+		if(strlen($val)<10) {
+			SmartyFacesMessages::addError($id, "You must enter minimum 10 characters");
+		}
+	}
 }
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-class InplaceView {
+class InplaceView extends  CommonView {
 	
 	public $text = "";
 	public $required;
@@ -12,7 +12,11 @@ class InplaceView {
 	public $ajax;
 	
 	function submit() {
-		$this->submitted=true;
+        if(empty($this->text)) {
+            SmartyFacesMessages::addGlobalWarning("You did not submitted text");
+        } else {
+            SmartyFacesMessages::addGlobalSuccess("You submitted text: " . $this->text);
+        }
 	}
 	
 	function clear() {
@@ -29,7 +33,7 @@ class InplaceView {
 	
 	function action() {
 		if($this->ajax){
-			SmartyFacesMessages::addGlobalMessage(SmartyFacesMessages::INFO, "You enetered value ".$this->text);
+			SmartyFacesMessages::addGlobalMessage(SmartyFacesMessages::INFO, "You entered value ".$this->text);
 		}
 	}
 	
