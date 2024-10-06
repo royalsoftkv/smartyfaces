@@ -14,52 +14,38 @@
 				<div class="col-sm-8">
 						Select Date
 						{sf_datepicker
+							id="dtp"
 							value="#[\$demoView->date]"
-							required=true
+							required=$demoView->required
 							attachMessage=$demoView->attachMessage
-							size=10
-							dateFormat=$demoView->dateFormat class="my-datepicker"
+							class="{if $demoView->class}my-datepicker{/if}"
+							disabled=$demoView->disabled
+							validator="{if $demoView->useValidator}DatepickerView::dateValidator{/if}"
 							converter="{if $demoView->useConverter eq 1}MySqlDateConverter{/if}"
-							validator="DemoView::dateValidator"
-							buttonImage="{if $demoView->buttonImage}img/cal.gif{/if}"
-							title="This is title of datepicker"
-							onclick="{if $demoView->onclick}alert('Datepicker clicked!'){/if}"
-							onchange="{if $demoView->onchange}alert('Datepicker changed!'){/if}"
-							style="{if $demoView->style}color:red{/if}"
-							required=$demoView->required disabled=$demoView->disabled
-							rendered=$demoView->rendered
 							action="{if $demoView->action}#[\$demoView->executeAction()]{/if}"
-							bootstrapIcon="{if $demoView->bootstrapIcon}time{else}calendar{/if}"
-							datepickerOptions=['calendarWeeks'=>true]
+							title="This is title of datepicker"
+							onchange="{if $demoView->onchange}dtpOnChange(event){/if}"
+							style="{if $demoView->style}color:red{/if}"
+							rendered=$demoView->rendered
 							time=$demoView->time
 							block=$demoView->block
 						}
 						<br/>
 						{sf_commandbutton value="Save" action="#[\$demoView->submitDate()]"}
-						<br/>
-						{$demoView->text}
-						<hr/>
-						{sf_datepicker value="#[\$demoView->date2]" dateFormat="DD.MM.YYYY hh:mm:ss"}
+						{sf_commandbutton value="Clear" btnclass="secondary" action="#[\$demoView->clearDate()]" immediate=true}
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
-							Date Format:
-							{sf_inputtext value='#[$demoView->dateFormat]' style="display:inline"}
-							<br/>
-							{sf_checkbox value='#[$demoView->useConverter]' label="Use converter"} 
-							<br/>
-							{sf_commandbutton value="Set" action="" immediate=true}
-							{sf_commandbutton value="Reset" action='#[$demoView->resetDatepicker()]' immediate=true}
-							{sf_checkbox value='#[$demoView->buttonImage]' action="" immediate=true label="Use button image"} 
-							{sf_checkbox value='#[$demoView->onclick]' action="" immediate=true label="Test onclick"} 
-							{sf_checkbox value='#[$demoView->onchange]' action="" immediate=true label="Test onchange"} 
-							{sf_checkbox value='#[$demoView->style]' action="" immediate=true label="Use style"} 
-							{sf_checkbox value='#[$demoView->required]' action="" immediate=true label="Required"} 
-							{sf_checkbox value='#[$demoView->attachMessage]' action="" immediate=true label="Show validation message"} 
-							{sf_checkbox value='#[$demoView->disabled]' action="" immediate=true label="Disabled"} 
-							{sf_checkbox value='#[$demoView->action]' action="" immediate=true label="Attach action on datepicker"} 
-							{sf_checkbox value='#[$demoView->rendered]' action="" immediate=true label="Rendered datepicker"} 
-							{sf_checkbox value='#[$demoView->bootstrapIcon]' action="" immediate=true label="Change bootstrap icon"} 
+						<div class="bg-light border p-2">
+							{sf_checkbox value='#[$demoView->required]' action="" immediate=true label="Required"}
+							{sf_checkbox value='#[$demoView->attachMessage]' action="" immediate=true label="Show validation message"}
+							{sf_checkbox value='#[$demoView->class]' action="" immediate=true label="Use custom class"}
+							{sf_checkbox value='#[$demoView->disabled]' action="" immediate=true label="Disabled"}
+							{sf_checkbox value='#[$demoView->useValidator]' action="" immediate=true label="Use validator"}
+							{sf_checkbox value='#[$demoView->useConverter]' label="Use converter"}
+							{sf_checkbox value='#[$demoView->action]' action="" immediate=true label="Attach action on datepicker"}
+							{sf_checkbox value='#[$demoView->onchange]' action="" immediate=true label="Test onchange"}
+							{sf_checkbox value='#[$demoView->style]' action="" immediate=true label="Use style"}
+							{sf_checkbox value='#[$demoView->rendered]' action="" immediate=true label="Rendered datepicker"}
 							{sf_checkbox value='#[$demoView->time]' action="" immediate=true label="Add time"}
 							{sf_checkbox value='#[$demoView->block]' action="" immediate=true label="Display as block"}
 						</div>
@@ -68,5 +54,18 @@
 			</div>
 		{/sf_form}
 	{{/sf_view}}
+
+		<script type="text/javascript">
+			function dtpOnChange(ev) {
+				alert(ev.target.value);
+			}
+		</script>
+
+		<style>
+			.my-datepicker {
+				background-color: #990000;
+				color: #fff;
+			}
+		</style>
 	{/literal}
 {/capture}
