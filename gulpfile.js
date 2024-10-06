@@ -37,7 +37,7 @@ gulp.task('copy-resources',  (done) => {
         cpr('node_modules/summernote/dist/plugin/hello/summernote-ext-hello.js','public/lib/summernote/summernote-ext-hello.js');
     });
     cpr('vendor/royalsoftkv/smartyfaces-core/assets','public/lib/smartyfaces', () => {
-        cpr('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css','public/lib/smartyfaces/smartyfaces.css');
+        // cpr('vendor/royalsoftkv/smartyfaces-core/assets/css/smartyfaces.css','public/lib/smartyfaces/smartyfaces.css');
     });
     // cp('vendor/royalsoftkv/smartyfaces-core/img/*','public/lib/smartyfaces/img'));
     cpr('node_modules/codemirror/lib','public/lib/codemirror/lib');

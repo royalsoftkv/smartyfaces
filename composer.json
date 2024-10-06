@@ -19,7 +19,7 @@
   ],
   "require": {
     "royalsoftkv/php-activerecord": "dev-smartyfaces",
-    "royalsoftkv/smartyfaces-core": "1.5.0"
+    "royalsoftkv/smartyfaces-core": "dev-master"
   },
   "autoload": {
     "classmap": ["src"]
