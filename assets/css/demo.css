@@ -1,7 +1,7 @@
-/**{*/
-/*	font-size: 12px;*/
+*{
+	font-size: 14px;
 /*	font-family: Verdana;*/
-/*}*/
+}
 .CodeMirror { height: auto; overflow: auto; line-height: 120%}
 /* .skin-bootstrap input[type=text] { */
 /* 	padding: 4px !important; */
