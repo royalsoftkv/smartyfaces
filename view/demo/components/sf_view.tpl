@@ -25,27 +25,27 @@
 						{sf_commandlink value="Increment" action='#[$bean->increment()]' rendered=!$stateless}
 						{sf_commandlink value="Increment" action='ViewView::increment2()' rendered=$stateless}
 						<br/>
-						Click {sf_link view="demo/view_template" viewvar="page" value="here"} to test template parameter.
+						Click {sf_link view="demo/view_template" value="here"} to test template parameter.
 						<br/>
-						Click {sf_link view="demo/view_test" viewvar="page" value="here"} to test multiple views.
+						Click {sf_link view="demo/view_test" value="here"} to test multiple views.
 					</div>
 					<div class="col-sm-4">
 						<div class="well">
-							{sf_link value="Switch to stateless view" viewvar=page view="demo/components/component&tag=sf_view&stateless"
+							{sf_link value="Switch to stateless view" view="demo/components/component&tag=sf_view&stateless"
 								rendered=!$stateless} 
 							<br/>
 							{if !$stateless}
 								{$storestate=ViewView::storestate()}
 								{if $storestate eq 'server'}
-									{sf_link value="Switch to client store" viewvar=page 
+									{sf_link value="Switch to client store"
 									view="demo/components/component&tag=sf_view&storestate=client"}
 								{else}
-									{sf_link value="Switch to server store" viewvar=page 
+									{sf_link value="Switch to server store"
 									view="demo/components/component&tag=sf_view"}
 								{/if}
 							{/if}
 							<br/>
-							{sf_link value="Switch to statefull view" viewvar=page view="demo/components/component&tag=sf_view"
+							{sf_link value="Switch to statefull view" view="demo/components/component&tag=sf_view"
 								rendered=$stateless} 
 							<br/>
 							{sf_link value="Display log" rendered=!$log action="ViewView::toggleLog()"} 

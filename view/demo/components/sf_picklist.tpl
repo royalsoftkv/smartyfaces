@@ -3,7 +3,7 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=PicklistView}
 			{sf_status}
@@ -16,10 +16,18 @@
 			</style>
 			<div class="row">
 				<div class="col-sm-8">
-						{sf_picklist id="my-picklist" source=$bean->available_countries var=country 
-							label="\$country['name']" value='#[$bean->selected_countries]' attachMessage=true 
-							required=$bean->required class="my-picklist" disabled=$bean->disabled}
-						{sf_commandbutton value="Submit" action="#[\$bean->submit()]"}
+						{sf_picklist
+							id="my-picklist"
+							value='#[$bean->selected_countries]'
+							attachMessage=true
+							required=$bean->required
+							class="{if $bean->class}my-picklist{/if}"
+							disabled=$bean->disabled
+							source=$bean->available_countries
+							var=country
+							label="\$country['name']"
+						}
+						{sf_commandbutton value="Submit" action="#[\$bean->submit()]" class="mt-2"}
 						{sf_popup rendered=$bean->popup header="Selected countries" action="#[\$bean->popup=false]"}
 							You submitted:
 							<br/>
@@ -30,14 +38,21 @@
 						{/sf_popup}
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
+						<div class="bg-light border p-2">
 							{sf_checkbox value='#[$bean->required]' immediate=true action="" label="Required"}
+							{sf_checkbox value='#[$bean->class]' immediate=true action="" label="Add custom class"}
 							{sf_checkbox value='#[$bean->disabled]' immediate=true action="" label="Disabled"}
 						</div>
 					</div>
 			</div>
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
+
+	<style>
+		.my-picklist select {
+			background-color: #66afe9;
+		}
+	</style>
 {/literal}
 {/capture}

@@ -7,7 +7,7 @@ class MessagesView {
 	public $class;
 	public $styled = true;
 	public $customClasses;
-	
+
 	function submit1() {
 		SmartyFacesMessages::addMessage(SmartyFacesMessages::SUCCESS, "name", "Hello ".$this->name);
 	}
@@ -57,5 +57,3 @@ class MessagesView {
 	}
 	
 }
-
-?>

@@ -1,6 +1,6 @@
 <?php
 
-class PicklistView {
+class PicklistView extends CommonView {
 	
 	public $available_countries;
 	public $selected_countries=array();
@@ -21,4 +21,3 @@ class PicklistView {
 	
 }
 
-?>

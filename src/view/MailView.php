@@ -32,7 +32,10 @@ class MailView {
 			return null;
 		}
 	}
+
+    function disabledSend() {
+        return !SmartyFaces::$config['mail_enabled'];
+    }
 	
 }
 
-?>

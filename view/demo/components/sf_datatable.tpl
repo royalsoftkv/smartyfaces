@@ -55,8 +55,8 @@
 					</div>
 			</div>
 			
-			{sf_link value="Datamodel demo" view="demo/datamodel" viewvar="page"} |
-			{sf_link value="Light datamodel demo" view="demo/lightdatamodel" viewvar="page"} |
+			{sf_link value="Datamodel demo" view="demo/datamodel"} |
+			{sf_link value="Light datamodel demo" view="demo/lightdatamodel"} |
 		
 		{/sf_form}
 	{{/sf_view}}

@@ -1,6 +1,6 @@
 <?php 
 
-class OutputtextView {
+class OutputtextView extends CommonView {
 	
 	public $converter;
 	public $rendered = true;
@@ -29,4 +29,3 @@ class OutputtextConverter {
 }
 
 
-?>

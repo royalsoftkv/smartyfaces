@@ -1,6 +1,6 @@
 <?php 
 
-class InputtextareaView {
+class InputtextareaView extends CommonView {
 	
 	public $value;
 	public $def_value=' Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -15,7 +15,7 @@ class InputtextareaView {
 	public $validator;
 	
 	public $rows = 5;
-	public $cols = 30;
+	public $cols = 50;
 	public $style = false;
 	public $custom = false;
 	public $converter = false;

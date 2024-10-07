@@ -1,6 +1,6 @@
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=PaginatorView}
 			{sf_status}
@@ -27,16 +27,21 @@
 								{sf_inputtext value="" required=true attachMessage=true size="2" block=false}
 							{/sf_column}
 						{/sf_datatable}
-						{sf_paginator id="botom" value=$countries datamodel='$bean->countries' immediate=$bean->immediate}
+						{sf_paginator
+							id="botom"
+							value=$countries
+							immediate=$bean->immediate
+							datamodel='$bean->countries'
+						}
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
+						<div class="bg-light border p-2">
 							{sf_checkbox value='#[$bean->immediate]' action="" label="Immediate" immediate=true}
 						</div>
 					</div>
 			</div>
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 {/literal}
 {/capture}

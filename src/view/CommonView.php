@@ -10,4 +10,6 @@ class CommonView
     public $style;
     public $setting = [];
 
+    public $confirm;
+
 }

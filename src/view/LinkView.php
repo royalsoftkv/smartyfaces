@@ -1,6 +1,6 @@
 <?php 
 
-class LinkView {
+class LinkView extends CommonView {
 	
 	public $disabled;
 	
@@ -31,4 +31,3 @@ class LinkView {
 }
 
 
-?>
