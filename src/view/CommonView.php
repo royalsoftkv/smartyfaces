@@ -11,5 +11,6 @@ class CommonView
     public $setting = [];
 
     public $confirm;
+    public $immediate = true;
 
 }

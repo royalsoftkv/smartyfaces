@@ -1,10 +1,10 @@
 <?php 
 
-class RadioView {
+class RadioView extends CommonView {
 	
 	public $selected;
 	public $required;
-	public $partial;
+	public $action;
 	public $disabled;
 	public $check;
 	public $confirm;
@@ -13,6 +13,7 @@ class RadioView {
 	
 	function submit(){
 		$str=($this->is_checked() ? "You selected " : "You did not selected")." radio";
+        $str.= " [".$this->selected."]";
 		SmartyFacesMessages::addGlobalMessage(SmartyFacesMessages::INFO, $str);
 	}
 	
@@ -57,7 +58,10 @@ class RadioView {
 			SmartyFacesMessages::addGlobalMessage(SmartyFacesMessages::INFO, "You did not submit radio ");
 		}
 	}
+
+    function execAction() {
+        SmartyFacesMessages::addGlobalSuccess("Radio input clicked!");
+    }
 }
 
 
-?>
