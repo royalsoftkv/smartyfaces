@@ -3,7 +3,7 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=PopupView}
 			{sf_status}
@@ -18,15 +18,19 @@
 			<div class="row">
 				<div class="col-sm-8">
 
-						{sf_commandlink value="Open popup" action='#[$bean->openPopup()]'}
-						<br/>
-						{sf_commandlink value="Open second popup" action='#[$bean->popup2=true]' immediate=true}
-						<br/>
-						{sf_commandlink value="Open third popup" action='#[$bean->popup3=true]' immediate=true}
-						
-						{sf_popup rendered=$bean->popup immediate=$bean->immediate action='#[$bean->closePopup()]' 
-							header="SmartyFaces Popup" modal=$bean->modal width=$bean->width fade=$bean->fade
-							draggable=$bean->draggable class="{if $bean->class}my-popup{/if}"}
+						{sf_commandbutton value="Open popup" action='#[$bean->openPopup()]'}
+						{sf_commandbutton value="Open second popup" action='#[$bean->popup2=true]' immediate=true}
+
+						{sf_popup
+							id="my-popup"
+							rendered=$bean->popup
+							immediate=$bean->immediate
+							class="{if $bean->class}my-popup{/if}"
+							header="SmartyFaces Popup"
+					  		action='#[$bean->closePopup()]'
+							width=$bean->width
+							fade=$bean->fade
+						}
 							<p>
 								This is simple modal poup. 
 								<br/>You can close it by click on X link in header,
@@ -35,10 +39,6 @@
 							Required field
 							{sf_inputtext id="req" value="" required=true attachMessage=true}
 							<br/>
-							{if SmartyFaces::$skin eq 'default'}
-								{sf_commandbutton value="Save" action='#[$bean->save()]'}
-								{sf_commandbutton value="Close" action='#[$bean->closePopup()]' immediate=true}
-							{/if}
 							{sf_facet name=footer rendered=(SmartyFaces::$skin eq 'bootstrap')}
 								{sf_commandbutton value="Save" action='#[$bean->save()]' btnclass="primary"}
 								{sf_commandbutton value="Close" action='#[$bean->closePopup()]' immediate=true}
@@ -48,6 +48,8 @@
 						{sf_popup rendered=$bean->popup2 header="Second popup" action='#[$bean->popup2=false]'}
 							<p>
 								This is second popup
+								<br/>
+								{sf_commandbutton value="Open nested popup" action='#[$bean->popup3=true]' immediate=true}
 							</p>
 							{sf_facet name=footer}
 								{sf_commandbutton value="Close" action='#[$bean->popup2=false]' immediate=true}
@@ -65,22 +67,21 @@
 
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
-							Width {sf_inputtext value='#[$bean->width]' required=true attachMessage=true style="display:inline"}
-							{sf_commandbutton value="Set" action=""}
-							{sf_commandbutton value="Reset" action="#[\$bean->width='\'auto\'']"}
-							<br/>
-							{sf_checkbox value='#[$bean->modal]' action="" immediate=true label="Modal dialog"}
+						<div class="bg-light border p-2">
 							{sf_checkbox value='#[$bean->immediate]' action="" immediate=true label="Immediate"}
-							{sf_checkbox value='#[$bean->fade]' action="" immediate=true label="Open with fade effect"}
-							{sf_checkbox value='#[$bean->draggable]' action="" immediate=true label="Draggable"}
 							{sf_checkbox value='#[$bean->class]' action="" immediate=true label="Use custom class"}
+							<div class="d-flex gap-2 align-items-center">
+								Width {sf_inputtext value='#[$bean->width]' required=true attachMessage=true}
+								{sf_commandbutton value="Set" action=""}
+								{sf_commandbutton value="Reset" action="#[\$bean->width='auto']"}
+							</div>
+							{sf_checkbox value='#[$bean->fade]' action="" immediate=true label="Open with fade effect"}
 						</div>
 					</div>
 			</div>
 			
 
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 {/literal}
 {/capture}

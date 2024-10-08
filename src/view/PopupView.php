@@ -3,7 +3,7 @@
 class PopupView {
 	
 	public $popup;
-	public $width="'auto'";
+	public $width="auto";
 	public $modal=true;
 	public $immediate=true;
 	public $fade=true;
