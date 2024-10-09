@@ -16,10 +16,9 @@
 			</style>
 			<div class="row">
 				<div class="col-sm-8">
-						Select option:
-						<br/>
 						Name: {sf_inputtext value='#[$bean->name]' required=true attachMessage=true}
 						<br/>
+						Select option:
 						{sf_radiogroup
 							id="radio-group"
 							value='#[$bean->value]'
@@ -38,7 +37,7 @@
 						}
 						<br/>
 						<div class="mt-2">
-							{sf_commandbutton value="Submit" action='#[$bean->submit()]'}
+							{sf_commandbutton value="Submit" action='#[$bean->submit()]' immediate=true}
 							{sf_commandbutton value="Reset" action='#[$bean->reset()]' immediate=true}
 						</div>
 					</div>

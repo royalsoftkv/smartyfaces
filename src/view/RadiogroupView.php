@@ -32,6 +32,7 @@ class RadiogroupView{
 	
 	function reset() {
 		$this->value=null;
+        $this->name=null;
 	}
 	
 }
