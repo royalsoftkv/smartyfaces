@@ -1,6 +1,6 @@
 <?php
 
-class SelectonemenuView {
+class SelectonemenuView extends CommonView {
 	
 	public $country;
 	public $countries;
@@ -14,12 +14,12 @@ class SelectonemenuView {
 	public $immediate = true;
 	public $style;
 	public $block=false;
-	public $autocomplete=false;
+	public $autocomplete=true;
 	public $option_class;
 	public $free_input = false;
 	
 	function __construct(){
-		$this->countries = SampleData::loadData(10);
+		$this->countries = SampleData::loadData(100);
 	}
 	
 	function submit() {

@@ -49,6 +49,9 @@ gulp.task('copy-resources',  (done) => {
     cpr('assets/img','public/img');
     cp('node_modules/socket.io-client/dist/socket.io.js','public/lib/socket.io');
     cpr('node_modules/sortablejs/Sortable.min.js','public/lib/sortablejs/Sortable.min.js');
+    cpr('node_modules/choices.js/public/assets/scripts/choices.min.js','public/lib/choices.js/choices.min.js');
+    cpr('node_modules/choices.js/public/assets/styles/base.min.css','public/lib/choices.js/base.min.css');
+    cpr('node_modules/choices.js/public/assets/styles/choices.min.css','public/lib/choices.js/choices.min.css');
     done();
 });
 
