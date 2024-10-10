@@ -15,6 +15,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/royalsoftkv/smartyfaces-core.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/royalsoftkv/jquery-php.git"
     }
   ],
   "require": {

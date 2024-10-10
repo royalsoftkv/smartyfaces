@@ -5,8 +5,6 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf bower_components",
-    "bower": "./node_modules/.bin/bower install",
     "gulp": "./node_modules/.bin/gulp",
     "setup-dev": "rm -rf vendor/royalsoftkv/smartyfaces-core && ln -sr ../smartyfaces-core vendor/royalsoftkv/smartyfaces-core"
   },

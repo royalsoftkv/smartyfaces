@@ -23,15 +23,11 @@ const cpr = (src, dest, cb) => {
 
 gulp.task('copy-resources',  (done) => {
     cpr('node_modules/bootstrap/dist','public/lib/bootstrap');
-    cpr('bower_components/bootstrap-combobox/css/bootstrap-combobox.css','public/lib/bootstrap-combobox/bootstrap-combobox.css');
-    cpr('bower_components/bootstrap-combobox/js/bootstrap-combobox.js','public/lib/bootstrap-combobox/bootstrap-combobox.js');
     cpr('node_modules/ckeditor','public/lib/ckeditor');
     cpr('node_modules/font-awesome/css','public/lib/font-awesome/css');
     cpr('node_modules/font-awesome/fonts','public/lib/font-awesome/fonts');
     cpr('node_modules/font-awesome/less','public/lib/font-awesome/less');
     cpr('node_modules/font-awesome/scss','public/lib/font-awesome/scss');
-    cp('bower_components/jquery-php/javascript/jquery.php.js','public/lib/jquery-php');
-    cp('bower_components/jquery-php/library/jQuery.php','./');
     cp('node_modules/jquery/dist/jquery.min.js','public/lib/jquery');
     cpr('node_modules/summernote/dist','public/lib/summernote', () => {
         cpr('node_modules/summernote/dist/plugin/hello/summernote-ext-hello.js','public/lib/summernote/summernote-ext-hello.js');
