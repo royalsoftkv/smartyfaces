@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
+    "clean": "rm -rf node_modules && rm -rf vendor && rm -rf tmp/*",
     "setup-dev": "rm -rf vendor/royalsoftkv/smartyfaces-core && ln -sr ../smartyfaces-core vendor/royalsoftkv/smartyfaces-core"
   },
   "repository": {
