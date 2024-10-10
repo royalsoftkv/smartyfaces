@@ -3,14 +3,19 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_status}
 		{sf_messages global=true}
 		{sf_form}
 		{sf_in name=bean class=TabsView}
 		<div class="row">
 				<div class="col-sm-8">
-					{sf_tabs action=$bean->getAction() value='#[$bean->tab]' id="sample-tabs" load=$bean->load}
+					{sf_tabs
+						id="sample-tabs"
+						action=$bean->getAction()
+						value='#[$bean->tab]'
+						load=$bean->load
+					}
 						{sf_tab header="Tab1"}
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce adipiscing odio purus, non egestas quam sodales a. Sed pharetra enim a sem suscipit, vel mattis massa faucibus. In lacinia eros sem, eget lacinia nibh pretium ac. Integer faucibus libero non gravida ultricies. Donec mattis congue sagittis. Praesent at mollis massa, ac eleifend dui. Maecenas sit amet arcu pretium, mollis dolor sed, scelerisque lectus. Donec urna ligula, tristique a urna id, pellentesque mollis elit. Ut sit amet blandit lectus. Nam posuere cursus enim, eu condimentum velit bibendum sit amet. Proin molestie ac nibh ut semper. Sed laoreet, justo nec pharetra sollicitudin, lectus nibh condimentum sem, et euismod augue ipsum consectetur mi. Sed consequat dapibus lacus, ut ornare lorem egestas a. Donec vitae sollicitudin mi. Duis neque augue, molestie vel mauris quis, luctus malesuada lorem. 
 						{/sf_tab}
@@ -30,7 +35,7 @@
 					{sf_commandbutton value="Switch to last tab" action="#[\$bean->tab=2]"}
 				</div>
 				<div class="col-sm-4">
-					<div class="well">
+					<div class="bg-light border p-2">
 						{sf_checkbox value='#[$bean->ajax]' immediate=true action="" label="Ajaxible"}
 						{sf_checkbox value='#[$bean->load]' immediate=true action="" label="Load automaticaly"}
 					</div>
@@ -42,6 +47,6 @@
 
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 {/literal}
 {/capture}

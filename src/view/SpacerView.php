@@ -8,4 +8,3 @@ class SpacerView {
 	public $style=false;
 }
 
-?>

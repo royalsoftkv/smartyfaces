@@ -2,7 +2,7 @@
 
 class TabsView {
 	
-	public $ajax=true;
+	public $ajax=false;
 	public $load=true;
 	public $check;
 	public $input;
@@ -23,4 +23,3 @@ class TabsView {
 	
 }
 
-?>
