@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
     "clean": "rm -rf node_modules && rm -rf vendor && rm -rf tmp/*",
-    "setup-dev": "rm -rf vendor/royalsoftkv/smartyfaces-core && ln -sr ../smartyfaces-core vendor/royalsoftkv/smartyfaces-core"
+    "setup-dev": "rm -rf vendor/royalsoftkv/smartyfaces-core && ln -sr ../smartyfaces-core vendor/royalsoftkv/smartyfaces-core",
+    "setup-dev-2": "rm -rf vendor/royalsoftkv/php-activerecord && ln -sr ../php-activerecord vendor/royalsoftkv/php-activerecord"
   },
   "repository": {
     "type": "git",

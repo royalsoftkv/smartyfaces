@@ -85,4 +85,3 @@ SampleDataManager::initDB();
 
 
 
-?>

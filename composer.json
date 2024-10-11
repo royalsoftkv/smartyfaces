@@ -22,7 +22,6 @@
     }
   ],
   "require": {
-    "royalsoftkv/php-activerecord": "dev-smartyfaces",
     "royalsoftkv/smartyfaces-core": "dev-master"
   },
   "autoload": {
