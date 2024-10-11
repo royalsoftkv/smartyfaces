@@ -53,9 +53,8 @@ class CountryDataModel extends SmartyFacesDataModel {
  		SampleDataManager::toggleActive($key);
 	}
 	
-	
+
 	
 	
 }
 
-?>

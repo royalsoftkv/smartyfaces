@@ -3,7 +3,7 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=CommandlinkView}
 			{sf_status}
@@ -30,37 +30,44 @@
 						</div>
 					</div>
 
-						{sf_commandlink id="lnk" value="Command Link" action='#[$bean->action()]' rendered=$bean->data.rendered
-							immediate=$bean->data.immediate|default:false class="{if $bean->data.class|default:false}my-link{/if}"
-							style="{if $bean->data.style}font-style:italic{/if}"
-							title="Click here" disabled=$bean->data.disabled|default:false confirm="{if $bean->data.confirm|default:false}Are you sure to want to click?{/if}"
+						{sf_commandlink
+							id="lnk"
+							action='#[$bean->action()]'
+							value="Command Link"
+							immediate=$bean->data.immediate|default:false
+							rendered=$bean->data.rendered
+							disabled=$bean->data.disabled|default:false
+							style="{if $bean->data.style|default:false}font-style:italic{/if}"
+							class="{if $bean->data.class|default:false}my-link{/if}"
+							title="Click here"
+							custom='link-id="123"'
+							confirm="{if $bean->data.confirm|default:false}Are you sure to want to click?{/if}"
 							onclick="{if $bean->data.onclick|default:false}alert('onclick event'){/if}"
-							update="{if $bean->data.update|default:false}region{/if}" custom='link-id="123"'}
+							update="{if $bean->data.update|default:false}region{/if}" }
 
 						{if $bean->data.update|default:false}
 							{sf_region id="region" value='
-								{if isset($bean) and isset($bean->data.name)}
-									You submitted {$bean->data.name}
-								{/if}
-							' assign=bean}
+								{sf_in name=bean}
+								You submitted {$bean->data.name}
+							'}
 						{/if}
 						
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
-							{sf_checkbox value="#[\$bean->data['rendered']]" immediate=true action="" label="Rendered"}
+						<div class="bg-light border p-2">
 							{sf_checkbox value="#[\$bean->data['immediate']]" immediate=true action="" label="Immediate"}
+							{sf_checkbox value="#[\$bean->data['rendered']]" immediate=true action="" label="Rendered"}
+							{sf_checkbox value="#[\$bean->data['disabled']]" immediate=true action="" label="Disabled"}
 							{sf_checkbox value="#[\$bean->data['style']]" immediate=true action="" label="Add custom style"}
 							{sf_checkbox value="#[\$bean->data['class']]" immediate=true action="" label="Use custom class"}
-							{sf_checkbox value="#[\$bean->data['disabled']]" immediate=true action="" label="Disabled"}
 							{sf_checkbox value="#[\$bean->data['confirm']]" immediate=true action="" label="Display confirm message"}
 							{sf_checkbox value="#[\$bean->data['onclick']]" immediate=true action="" label="Add onclick event"}
-							{sf_checkbox value="#[\$bean->data['update']]" immediate=true action="" label="Use update [Experimental]"}
+							{sf_checkbox value="#[\$bean->data['update']]" immediate=true action="" label="Use update region"}
 						</div>
 					</div>
 			</div>
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 {/literal}
 {/capture}

@@ -12,6 +12,9 @@ class AjaxView {
 
     public $text3;
     public $out3;
+
+    public $action = true;
+    public $input;
 	
 	function change() {
 		$actionData=SmartyFacesContext::$actionData;

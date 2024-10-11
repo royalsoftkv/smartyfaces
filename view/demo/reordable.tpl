@@ -16,19 +16,19 @@
 				<h3>Countries table</h3>
 			{/sf_facet}
 			{sf_column header="ISO"}
-				{$country->iso}
+				{$country.iso}
 			{/sf_column}
 			{sf_column header=Name}
-				{$country->name}
+				{$country.name}
 			{/sf_column}
 			{sf_column header=ISO3}
-				{$country->iso3}
+				{$country.iso3}
 			{/sf_column}
 			{sf_column header="Numeric code"}
-				{$country->numcode}
+				{$country.numcode}
 			{/sf_column}
 			{sf_column reorder=true reorderlist='$bean->countries'}
-				{$country->numcode}
+				{$country.numcode}
 			{/sf_column}
 		{/sf_datatable}
 	

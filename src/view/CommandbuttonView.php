@@ -22,9 +22,11 @@ class CommandbuttonView {
 		SmartyFacesMessages::addGlobalMessage("info", "You submitted button 2");
         $this->submitted2 = true;
 	}
-	
+
+	function submit3() {
+        SmartyFacesMessages::addGlobalMessage("warn", "You submitted warning button");
+    }
 	
 }
 
 
-?>

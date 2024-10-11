@@ -1,6 +1,6 @@
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=DatatableView}
 			{sf_status}
@@ -10,11 +10,21 @@
 			</style>
 			<div class="row">
 				<div class="col-sm-8">
-						{sf_datatable id="my-data-table" value=$bean->countries() var=country style="{if $bean->style}width:500px;{/if}"
-							class="{if $bean->class}my-table{/if}" index=index
-							emptyRowsMessage="There are no records in this table" rowKeyVar=row rowSelection=$bean->selected
-							header="SmartyFaces data table" rowclass='$template->getTemplateVars(\'bean\')->getRowClass($row)'
-							responsive=$bean->responsive visibleColumns=$bean->getVisibleColumns()}
+						{sf_datatable
+							id="my-data-table"
+							value=$bean->countries()
+							style="{if $bean->style}width:500px;{/if}"
+							class="{if $bean->class}my-table{/if}"
+							var=country
+							index=index
+							emptyRowsMessage="There are no records in this table"
+							rowKeyVar=row
+							rowSelection=$bean->selected
+							header="SmartyFaces data table"
+							rowclass='$template->getTemplateVars(\'bean\')->getRowClass($row)'
+							responsive=$bean->responsive
+							visibleColumns=$bean->getVisibleColumns()
+						}
 							{sf_column header=Index id=index}
 								{sf_commandlink value="$index" action="#[\$bean->selected={$index}]"}
 							{/sf_column}
@@ -45,9 +55,11 @@
 						{/sf_datatable}
 					</div>
 					<div class="col-sm-4">
-						<div class="well">
+						<div class="bg-light border p-2">
 							{sf_checkbox value='#[$bean->style]' action="" immediate=true label="Add custom style"}
 							{sf_checkbox value='#[$bean->class]' action="" immediate=true label="Add custom class"}
+
+
 							{sf_checkbox value='#[$bean->emptyTable]' action="" immediate=true label="Empty table"}
 							{sf_checkbox value='#[$bean->responsive]' action="" immediate=true label="Responsive table"}
 							{sf_checkbox value='#[$bean->hideColumns]' action="" immediate=true label="Hide columns"}
@@ -59,7 +71,7 @@
 			{sf_link value="Light datamodel demo" view="demo/lightdatamodel"} |
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 
 
 	<style>

@@ -48,6 +48,7 @@
 			{/sf_column}
 			{sf_column header="Active[region]" sortby="active"}
 				{sf_region id="active_{$row}" assign=['country','row'] value='
+					{sf_in name=bean}
 					{sf_commandlink id="cl_{$row}" value=$country.active action="#[\$bean->countries->toggleActive1(\'{$country.iso}\',{$row})]"
 						update="active_{$row}"}
 				'}

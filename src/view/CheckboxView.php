@@ -1,6 +1,6 @@
 <?php 
 
-class CheckboxView {
+class CheckboxView extends CommonView {
 	
 	public $checked = false;
 	public $required = false;
@@ -17,6 +17,8 @@ class CheckboxView {
 
     public $check2;
     public $boolean;
+
+    public $ajaxAction;
 	
 	function submit() {
         $val = $this->checked;
