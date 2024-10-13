@@ -11,20 +11,6 @@
 				</ol>
 			</nav>
 		</div>
-		{$skin=DemoFunctions::getSkin()}
-		<div class="col-sm-3 text-right">
-			<ul class="nav nav-pills">
-				<li class="nav-item">
-					{sf_link value="Bootstrap" action="DemoFunctions::changeSkin('bootstrap')" class="nav-link {if $skin eq 'bootstrap'}active{/if}"}
-				</li>
-				<li class="nav-item">
-					{sf_link value="Default" action="DemoFunctions::changeSkin('default')" class="nav-link {if $skin eq 'default'}active{/if}"}
-				</li>
-				<li class="nav-item">
-					{sf_link value="None" action="DemoFunctions::changeSkin('none')" class="nav-link {if $skin eq 'none'}active{/if}"}
-				</li>
-			</ul>
-		</div>
 	</div>
 	
 	

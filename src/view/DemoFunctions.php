@@ -129,11 +129,7 @@ class DemoFunctions {
 	static function tagExists($tag) {
 		return file_exists(dirname(dirname(__DIR__))."/view/demo/components/$tag.tpl");
 	}
-	
-	static function getSkin() {
-		return SFSession::get("skin", "bootstrap");
-	}
-	
+
 	static function changeSkin($skin) {
         SFSession::set("skin", $skin);
 		SmartyFaces::reload();
