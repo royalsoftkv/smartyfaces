@@ -1,6 +1,8 @@
 {
   "name": "royalsoft/smartyfaces-framework",
   "description": "PHP Ajax Framework based on Smarty",
+  "type": "library",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "RoyalSoft",
