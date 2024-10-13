@@ -20,10 +20,10 @@
 						 	attachMessage=true
 							type=$bean->type
 						}
-						<br/>
+						<div class="mt-2">
 						{sf_commandbutton value="Submit" action="#[\$bean->submit()]"}
 						{sf_commandbutton value="Clear" action="#[\$bean->clear()]" immediate=true}
-						<br/>
+						</div>
 						{if $bean->submitted}
 							You submitted: {$bean->text}
 						{/if}

@@ -14,7 +14,7 @@ class SelectonemenuView extends CommonView {
 	public $immediate = true;
 	public $style;
 	public $block=false;
-	public $autocomplete=true;
+	public $autocomplete=false;
 	public $option_class;
 	public $free_input = false;
 	

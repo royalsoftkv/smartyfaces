@@ -3,7 +3,7 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=EditorView}
 			{sf_status}
@@ -17,7 +17,7 @@
 							rendered=$bean->data.rendered
 							validator="{if $bean->data.validator|default:false}EditorView::editorValidator{/if}"
 							attachMessage=true
-							class="{if $bean->data.class}my-editor{/if}"
+							class="{if $bean->data.class|default:false}my-editor{/if}"
 							disabled=$bean->data.disabled|default:false
 							width="100%"
 							height="300px"
@@ -52,7 +52,7 @@
 			
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 
 
 	<style>

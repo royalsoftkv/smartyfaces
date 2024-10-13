@@ -3,7 +3,7 @@
 {/capture}	
 {capture name=view}
 {literal}
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 		{sf_form}
 		{sf_in name=bean class=ImageView}
 			{sf_status}
@@ -49,6 +49,6 @@
 			</div>
 		
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 {/literal}
 {/capture}

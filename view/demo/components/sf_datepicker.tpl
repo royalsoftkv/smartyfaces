@@ -5,7 +5,7 @@
 {capture name=view}
 	{literal}
 	
-	{{sf_view id="demo" template=$template}}
+	{sf_view id="demo" template=$template}
 	
 		{sf_form}
 		{sf_in name=demoView class=DatepickerView}
@@ -53,7 +53,7 @@
 					</div>
 			</div>
 		{/sf_form}
-	{{/sf_view}}
+	{/sf_view}
 
 		<script type="text/javascript">
 			function dtpOnChange(ev) {

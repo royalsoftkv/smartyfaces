@@ -24,7 +24,7 @@
 					<div class="d-flex gap-3 align-items-center">
 						{sf_ajax for="itext" event="change" action='#[$demoView->change()]' actionData=5 immediate=true
 							oncomplete="complete(data)" rendered=$demoView->events}
-						<div>
+						<div class="w-100">
 							{sf_inputtext
 								value='#[$demoView->name]'
 								id="itext"
