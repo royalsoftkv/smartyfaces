@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "royalsoftkv/smartyfaces-core": "dev-master"
+    "royalsoftkv/smartyfaces-core": "1.5.1"
   },
   "autoload": {
     "classmap": ["src"]
