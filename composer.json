@@ -9,30 +9,30 @@
       "email": "royalsoftkv@gmail.com"
     }
   ],
+  "repositories0": [
+    {
+      "type": "path",
+      "url": "/programming/workspaces/my/smartyfaces-core"
+    }
+  ],
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/royalsoftkv/php-activerecord.git"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/royalsoftkv/smartyfaces-core.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/royalsoftkv/jquery-php.git"
     }
   ],
   "require": {
-    "royalsoftkv/smartyfaces-core": "1.5.1"
+    "royalsoftkv/smartyfaces-core": "1.5.2"
   },
   "autoload": {
     "classmap": ["src"]
   },
   "scripts": {
-    "server": [
-      "Composer\\Config::disableProcessTimeout",
-      "cd public && php -S 127.0.0.1:5000"
+    "post-install-cmd": [
+      "RoyalSortKv\\SmartyFacesCore\\composer\\ScriptHandler::buildAssets"
+    ],
+    "post-update-cmd": [
+      "RoyalSortKv\\SmartyFacesCore\\composer\\ScriptHandler::buildAssets"
     ]
   }
 }
