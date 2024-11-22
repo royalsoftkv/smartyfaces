@@ -1,7 +1,7 @@
 <?php
 
 ini_set("display_errors",1);
-error_reporting(E_ALL ^ E_DEPRECATED ^ E_USER_DEPRECATED);
+error_reporting(E_ALL ^ E_USER_DEPRECATED);
 
 //ini_set("memory_limit","64M");
 
@@ -19,7 +19,7 @@ SmartyFaces::configure(
 	'default_view'=>'demo/home',
 	'progressive_loading'=>true,
 	'skin'=>'bootstrap',
-	'mail_enabled'=>false,
+	'mail_enabled'=>true,
 	'eval_with_file'=>false,
 		'resources_url'=>'/lib'
 	)
@@ -48,12 +48,12 @@ SmartyFacesTrigger::set_trigger(SmartyFacesTrigger::NOT_AUTHORIZED_AJAX, functio
 //	}
 //});
 
-ActiveRecord\Config::initialize(function($cfg)
-{
-	$cfg->set_model_directory(dirname(ROOT).'/src/model');
-	$cfg->set_connections(array(
-			'development' => 'sqlite://unix('.SampleDataManager::$file.')'));
-});
+//ActiveRecord\Config::initialize(function($cfg)
+//{
+////	$cfg->set_model_directory(dirname(ROOT).'/src/model');
+//	$cfg->set_connections(array(
+//			'development' => 'sqlite://unix('.SampleDataManager::$file.')'));
+//});
 
 //example for additional language loading function
 SmartyFaces::$callbackFunctions[SmartyFaces::CALLBACK_LANGUAGE_LOADING_FUNCTION] = function (&$data) {
@@ -69,8 +69,6 @@ SmartyFaces::$callbackFunctions[SmartyFaces::CALLBACK_LANGUAGE_PROCESS_TRANSLATI
 SmartyFaces::startSession();
 
 SmartyFaces::$config['compress_state']=(isset($_SESSION['compress_state']) && $_SESSION['compress_state']);
-
-SmartyFaces::setSkin(DemoFunctions::getSkin());
 
 SmartyFaces::processRequest();
 
