@@ -35,8 +35,9 @@
 						boolean=$bean->boolean
 						label="I agree with terms"
 						confirm="{if $bean->confirm}Confirm check?{/if}"
+						onchange="{if $bean->onchange}alert('onchange'){/if}"
 					}
-					{sf_commandbutton value="Submit" action="#[\$bean->submit()]" immediate=(!$bean->required and !$bean->validator) class="mt-2"}
+					{sf_commandbutton class="btn-primary mt-2" value="Submit" action="#[\$bean->submit()]" immediate=(!$bean->required and !$bean->validator)}
 				</div>
 				<div class="col-sm-4">
 					<div class="bg-light border p-2">
@@ -50,6 +51,7 @@
 						{sf_checkbox value='#[$bean->check]' action="" immediate=true label="Use different check/uncheck values"}
 						{sf_checkbox value='#[$bean->boolean]' action="" immediate=true label="Store and process value of chekbox as boolean"}
 						{sf_checkbox value='#[$bean->confirm]' action="" immediate=true label="Add confirm message"}
+						{sf_checkbox value='#[$bean->onchange]' action="" immediate=true label="Add onchange event"}
 					</div>
 				</div>
 			</div>

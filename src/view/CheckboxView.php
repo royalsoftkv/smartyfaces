@@ -19,6 +19,8 @@ class CheckboxView extends CommonView {
     public $boolean;
 
     public $ajaxAction;
+
+    public $onchange;
 	
 	function submit() {
         $val = $this->checked;

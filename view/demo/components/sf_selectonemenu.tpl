@@ -35,7 +35,7 @@
 						free_input=$bean->free_input
 					}
 						<br/>
-						{sf_commandbutton value="Submit" action='#[$bean->submit()]' immediate=!$bean->required}
+						{sf_commandbutton class="btn-primary" value="Submit" action='#[$bean->submit()]' immediate=!$bean->required}
 						<br/>
 						Simple array select menu:
 						{sf_selectonemenu values=$bean->array1() value=''}

@@ -27,7 +27,7 @@
 							editor=$bean->data["editortype"]
 						}
 						<br/>
-						{sf_commandbutton value="Submit" action="#[\$bean->submit()]"}
+						{sf_commandbutton class="btn-primary" value="Submit" action="#[\$bean->submit()]"}
 						{sf_commandbutton value="Clear" btnclass=secondary action="#[\$bean->clear()]" immediate=true}
 					</div>
 					<div class="col-sm-4">

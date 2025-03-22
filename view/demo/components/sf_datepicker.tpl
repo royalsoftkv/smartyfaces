@@ -29,6 +29,7 @@
 							rendered=$demoView->rendered
 							time=$demoView->time
 							block=$demoView->block
+							native=$demoView->native
 						}
 						<br/>
 						{sf_commandbutton value="Save" action="#[\$demoView->submitDate()]"}
@@ -48,6 +49,7 @@
 							{sf_checkbox value='#[$demoView->rendered]' action="" immediate=true label="Rendered datepicker"}
 							{sf_checkbox value='#[$demoView->time]' action="" immediate=true label="Add time"}
 							{sf_checkbox value='#[$demoView->block]' action="" immediate=true label="Display as block"}
+							{sf_checkbox value='#[$demoView->native]' action="" immediate=true label="Use native datepicker"}
 						</div>
 						
 					</div>

@@ -21,7 +21,8 @@ SmartyFaces::configure(
 	'skin'=>'bootstrap',
 	'mail_enabled'=>true,
 	'eval_with_file'=>false,
-		'resources_url'=>'/lib'
+		'resources_url'=>'/lib',
+        'button_default_class'=>'btn btn-primary',
 	)
 );
 

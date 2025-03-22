@@ -15,6 +15,7 @@ class DatepickerView {
     public $block;
     public $useValidator;
     public $class;
+    public $native;
 	
 	public function submit() {
 		$this->text="You submitted: ".$this->name;
